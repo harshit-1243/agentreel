@@ -26,6 +26,7 @@ INK = MUTE = LINE = (38, 58, 140)
 RED = AMBER = (232, 65, 44)
 PAPER = (240, 236, 228)
 ARCH = str(FONTS / "Archivo[wdth,wght].ttf")
+TEAM = [("Harshit Modi", "16014223039"), ("Mohammed Zamee Sheikh", "16014223054"), ("Eashan Salian", "16014223035")]
 BROWSERS = [r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
             r"C:\Program Files\Google\Chrome\Application\chrome.exe",
             "/usr/bin/chromium", "/usr/bin/google-chrome",
@@ -196,12 +197,15 @@ def build(run_id=None):
     pdf.set_xy(14, 47)
     pdf.set_font("plexsb", "", 9)
     pdf.cell(0, 5, f"Brief {brief_id}: {brief['topic']}")
-    pdf.set_xy(14, 52.5)
-    pdf.set_font("plex", "", 7.5)
-    pdf.cell(0, 4, f"Team {meta['team']} (Group 4) · run {run_id} · seed {qa['seed']} · LLM {qa['llm_provider']} · "
+    pdf.set_xy(14, 52.3)
+    pdf.set_font("plexsb", "", 8)
+    pdf.cell(0, 4, f"Team {meta['team']} (Group 4): " + " · ".join(f"{n} ({r})" for n, r in TEAM))
+    pdf.set_xy(14, 56.6)
+    pdf.set_font("plex", "", 7.2)
+    pdf.cell(0, 4, f"Run {run_id} · seed {qa['seed']} · LLM {qa['llm_provider']} · "
                    f"{datetime.now():%d %b %Y} · L3 · python run.py --brief briefs/{brief_id}.yaml --seed {qa['seed']}")
     pdf.set_line_width(0.3)
-    pdf.line(14, 58.5, 196, 58.5)
+    pdf.line(14, 61.5, 196, 61.5)
     pdf.set_line_width(0.2)
 
     kp = [(f"{qa['duration_s']:.1f}s", "duration (30–60)"), (f"{qa['lufs']:.1f}", "LUFS (target −14)"),
@@ -209,19 +213,19 @@ def build(run_id=None):
           (str(len(counted)), "interventions of 5"),
           (f"{sum(c['passed'] for h in qa['history'] if h['status'] == 'pass' for c in h['checks'])}/"
            f"{sum(len(h['checks']) for h in qa['history'] if h['status'] == 'pass')}", "QA rules passed")]
-    pdf.set_y(64)
+    pdf.set_y(65)
     w = 182 / len(kp)
     for i, (v, l) in enumerate(kp):
         x = 14 + i * w
-        pdf.set_xy(x, 64)
+        pdf.set_xy(x, 65)
         pdf.set_font("serif", "", 17)
         pdf.set_text_color(*(RED if i == 2 else INK))
         pdf.cell(w, 9, v)
-        pdf.set_xy(x, 73)
+        pdf.set_xy(x, 74)
         pdf.set_font("plexsb", "", 6.5)
         pdf.set_text_color(*MUTE)
         pdf.cell(w, 4, l)
-    pdf.set_y(80)
+    pdf.set_y(81)
 
     pdf.h2("01 — BRIEF INTERPRETATION & CREATIVE STRATEGY", "Show, don't claim")
     pdf.para(f"**Audience insight.** {plan['creative']['audience_insight']} The brief forbids exaggerated "

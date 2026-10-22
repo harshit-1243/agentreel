@@ -2,6 +2,12 @@
 
 **SOMAIYA AGENTREEL CHALLENGE — LY Agentic AI Laboratory, K J Somaiya School of Engineering**
 
+| Team G04 (Group 4) | Roll number |
+|---|---|
+| Harshit Modi | 16014223039 |
+| Mohammed Zamee Sheikh | 16014223054 |
+| Eashan Salian | 16014223035 |
+
 A reusable, brief-agnostic multi-agent pipeline. You give it a sealed brief (`briefs/<id>.yaml`); seven agents
 research, script, storyboard, generate, edit and quality-check a 9:16 promotional reel (30–60 s). Every model
 and tool call is logged, costed and hashed.
