@@ -1,0 +1,37 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+.s06-pill { font-family:'JetBrains Mono',monospace; font-size:30px; padding:16px 26px; 
+      border:2px solid #263a8c; color:#263a8c; background:#ede9e0; }</style>
+  <div id="root" data-composition-id="s06" data-width="1080" data-height="1920">
+
+    <div id="s06-k" class="kick" style="position:absolute;top:220px;left:96px;">DEPLOY TARGETS · FROM THE LAB HANDOUT</div>
+    <div id="s06-win" class="card" style="left:60px;top:290px;width:960px;height:640px;overflow:hidden;">
+      <div style="height:74px;display:flex;align-items:center;gap:12px;padding:0 28px;border-bottom:1px solid #263a8c;background:#ede9e0;">
+        <i style="width:16px;height:16px;background:#e8412c;"></i><i style="width:16px;height:16px;background:#263a8c;"></i><i style="width:16px;height:16px;background:#263a8c;"></i>
+        <span class="mono mute" style="margin-left:24px;font-size:28px;background:#ede9e0;padding:8px 18px;">AgentReel · run dashboard</span></div>
+      <img src="assets/img/dashboard.png" style="position:absolute;left:0;top:74px;width:960px;height:auto;" alt="">
+    </div>
+    <div id="s06-pills" style="position:absolute;left:60px;top:970px;width:960px;display:flex;flex-wrap:wrap;gap:16px;"><span id="s06-p0" class="s06-pill">GitHub Pages</span><span id="s06-p1" class="s06-pill">Hugging Face Spaces</span><span id="s06-p2" class="s06-pill">Streamlit Cloud</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s06-win", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.6, ease: "expo.out" }, 0);
+    tl.fromTo("#s06-win img", { y: 0 }, { y: -170, duration: 5.41, ease: "power1.inOut" }, 0.3);
+    tl.fromTo("#s06-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0.1);
+    tl.fromTo("#s06-p0", { color: "#263a8c", borderColor: "#263a8c", y: 16, opacity: 0.3 }, { color: "#263a8c", borderColor: "#263a8c", y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 1.90);
+    tl.fromTo("#s06-p1", { color: "#263a8c", borderColor: "#263a8c", y: 16, opacity: 0.3 }, { color: "#263a8c", borderColor: "#263a8c", y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 3.04);
+    tl.fromTo("#s06-p2", { color: "#263a8c", borderColor: "#263a8c", y: 16, opacity: 0.3 }, { color: "#263a8c", borderColor: "#263a8c", y: 0, opacity: 1, duration: 0.25, ease: "power3.out" }, 4.57);
+    tl.to(["#s06-win", "#s06-pills", "#s06-k"], { opacity: 0, duration: 0.25, ease: "power2.in" }, 5.74);
+    window.__timelines["s06"] = tl;
+  </script>
+</template>

@@ -1,0 +1,175 @@
+{
+  "backend": "chromadb+minilm",
+  "results": [
+    {
+      "q": "What is the maximum API budget for a Live Run?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 3,
+          "score": 0.6881,
+          "snippet": ". Constraints Constraint | Rule Live Run time | 3 hours hard stop from brief draw to submission. Late = penalty (Section 9.3). API budget | Maximum ₹500 (≈ USD "
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 8,
+          "score": 0.3892,
+          "snippet": "; README with autonomy level and run command logs/run_log.jsonl, cost_report.csv, interventions.md complete for the Live Run prompts/ folder with all prompt tem"
+        }
+      ]
+    },
+    {
+      "q": "How long is the Live Run?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 3,
+          "score": 0.4732,
+          "snippet": ". Constraints Constraint | Rule Live Run time | 3 hours hard stop from brief draw to submission. Late = penalty (Section 9.3). API budget | Maximum ₹500 (≈ USD "
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 1,
+          "score": 0.4157,
+          "snippet": ". Build | 2 weeks (off-lab + lab hours) | Build a reusable, brief-agnostic pipeline. Ingest the official fact sheet & media kit. Dry-run on the practice brief ("
+        }
+      ]
+    },
+    {
+      "q": "Which agent checks duration and factual claims?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 5,
+          "score": 0.4553,
+          "snippet": ". Agent graph and why each agent exists; framework and models chosen. Time and cost per stage (table from cost_report.csv). Critic loop: what failed, what the a"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 8,
+          "score": 0.3863,
+          "snippet": "Responsible AI Award — best Category C output Best Autonomy — highest P1 with a working self-repair loop Best Reproducible Workflow — cleanest repo, logs and on"
+        }
+      ]
+    },
+    {
+      "q": "What must the end card contain?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 8,
+          "score": 0.3958,
+          "snippet": ", cost: ₹___ , time: ___) | 15 P4 Technical creativity | 10 Penalties | — | − Total (/100) | 100 Scaled lab marks | __ | Evaluator sign: ________ 11.2 Human-int"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 2,
+          "score": 0.2957,
+          "snippet": ". | storyboard.json 5. Asset Generator | Generate or select images/clips, TTS voice-over, background music, subtitles. | assets/ folder + manifest 6. Editor | A"
+        }
+      ]
+    },
+    {
+      "q": "What are the learning outcomes of the lab?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 1,
+          "score": 0.466,
+          "snippet": ". Evaluation covers not only the final output but also planning, prompts, the generation process, tool orchestration, cost discipline, autonomy and reproducibil"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 1,
+          "score": 0.4147,
+          "snippet": ". Safety and awareness outputs (anti-ragging, ICC/POSH, cyber safety, AI policy) are directly usable in student induction and support UGC / NAAC compliance acti"
+        }
+      ]
+    },
+    {
+      "q": "Which vector stores are suggested for RAG?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 2,
+          "score": 0.1901,
+          "snippet": ". RAG over fact sheet working. Script + storyboard agents working. Week 2 | Asset generation, editor and critic loop integrated. Full dry-run on practice brief."
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 7,
+          "score": 0.1578,
+          "snippet": ", logging & cost discipline | 15 | Re-run + logs + cost P4 | Technical creativity | 10 | Code + viva Total | 100 9.2 Detailed level descriptors Criterion | Exce"
+        }
+      ]
+    },
+    {
+      "q": "How many human interventions are allowed?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 7,
+          "score": 0.4737,
+          "snippet": ". | Coherent; minor sync or pacing issues. | Disjointed shots; noticeable quality issues. | Incoherent; fails technical specs. O4 Accuracy (5) | Every claim/con"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 4,
+          "score": 0.4725,
+          "snippet": ", provider, model, tokens/units, cost interventions.md # every human intervention docs/ agent_graph.png # architecture diagram process_report.pdf # 1–2 pages 6."
+        }
+      ]
+    },
+    {
+      "q": "What frame rate and codec must the video use?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 3,
+          "score": 0.628,
+          "snippet": ". Over 60 s = penalty. Aspect ratio & resolution | 9:16 vertical, 1080 × 1920 (Reels / Shorts) — default or 16:9 horizontal, 1920 × 1080 (YouTube / display scre"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 3,
+          "score": 0.4353,
+          "snippet": ". Code and prompt templates are allowed. Logging | Logging must be on for the entire Live Run. Missing or edited logs = zero for Workflow & Reproducibility. 5. "
+        }
+      ]
+    },
+    {
+      "q": "Where can a digital experience be deployed?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 4,
+          "score": 0.3952,
+          "snippet": ". T07_A03_final.mp4) 5.2 Digital experience track Parameter | Specification Form | Single-page web app, chatbot, quiz, or interactive tour — completable by a us"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 1,
+          "score": 0.3714,
+          "snippet": ". Orchestrate text, image, video, speech and audio generation tools under time and budget constraints. Instrument an agent system with structured logs, cost tra"
+        }
+      ]
+    },
+    {
+      "q": "What happens if a fact is fabricated?",
+      "top": [
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 7,
+          "score": 0.3105,
+          "snippet": ". 9.3 Penalties Violation | Penalty Each fabricated fact / statistic | −10 (per instance) Wrong helpline / contact in Category A or C | O4 = 0 and −5 Over API b"
+        },
+        {
+          "source": "LY_AgenticAI_Lab_Handout.pdf",
+          "page": 5,
+          "score": 0.3035,
+          "snippet": ". No invented rankings, placement numbers, package figures, awards or accreditation claims. Every factual claim must trace to facts.json. No real likeness. Do n"
+        }
+      ]
+    }
+  ]
+}

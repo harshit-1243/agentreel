@@ -1,0 +1,35 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+</style>
+  <div id="root" data-composition-id="s10" data-width="1080" data-height="1920">
+
+    <div id="s10-name" style="position:absolute;left:80px;top:250px;font-size:40px;font-weight:800;">K J Somaiya School of Engineering</div>
+    <div id="s10-uni" style="position:absolute;left:80px;top:302px;font-size:30px;">Somaiya Vidyavihar University</div>
+    <div id="s10-flood" style="position:absolute;left:0;right:0;top:400px;height:640px;background:#e8412c;"></div>
+    <div id="s10-cta" class="serif" style="position:absolute;left:80px;right:60px;top:450px;font-size:120px;line-height:.95;color:#220f18;">Hire our AI&#8209;ready graduates today.</div>
+    <div id="s10-mark" class="serif" style="position:absolute;left:80px;top:1090px;font-size:56px;">AI-ready. Industry-ready.</div>
+    <div id="s10-rule" style="position:absolute;left:80px;right:80px;top:1196px;height:4px;background:#263a8c;"></div>
+    <div id="s10-disc" style="position:absolute;left:80px;top:1220px;font-size:34px;font-weight:800;">Created with AI agents — LY Agentic AI Lab</div>
+    <div id="s10-src" style="position:absolute;left:80px;top:1272px;font-size:28px;">Facts: LY Agentic AI Lab handout · Brief C05 · Team G04</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s10-flood", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo(["#s10-name", "#s10-uni"], { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.05);
+    tl.fromTo("#s10-mark", { opacity: 0, y: 30, filter: "blur(6px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0.15);
+    tl.fromTo("#s10-rule", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.4, ease: "expo.out" }, 0.45);
+    tl.fromTo("#s10-cta", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }, 0.6);
+    tl.fromTo(["#s10-disc", "#s10-src"], { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.1 }, 0.9);
+    window.__timelines["s10"] = tl;
+  </script>
+</template>

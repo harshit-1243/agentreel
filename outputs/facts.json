@@ -1,0 +1,170 @@
+[
+  {
+    "id": "F01",
+    "claim": "Agentic AI Laboratory — Final Year (LY)",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.624,
+    "query": "lab",
+    "tags": [
+      "lab"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F02",
+    "claim": "1.1 Learning outcomes After completing this evaluation, students will be able to: Design a multi-agent workflow with clearly defined roles, hand-offs and a critic/feedback loop.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.773,
+    "query": "multi_agent",
+    "tags": [
+      "multi_agent"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F03",
+    "claim": "Ground LLM generation in verified source documents using retrieval (RAG) to avoid hallucinated claims",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.779,
+    "query": "rag",
+    "tags": [
+      "rag"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F04",
+    "claim": "Orchestrate text, image, video, speech and audio generation tools under time and budget constraints.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.835,
+    "query": "orchestration",
+    "tags": [
+      "orchestration"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F05",
+    "claim": "Instrument an agent system with structured logs, cost tracking and one-command reproducibility.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.823,
+    "query": "logging",
+    "tags": [
+      "logging"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F06",
+    "claim": "Apply responsible-AI practices: factual grounding, consent, disclosure, safe messaging and licensing.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.815,
+    "query": "responsible",
+    "tags": [
+      "responsible"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F07",
+    "claim": "Maximum ₹500 (≈ USD 6) per Live Run across all paid APIs.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 3,
+    "score": 0.73,
+    "query": "budget",
+    "tags": [
+      "budget"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F08",
+    "claim": "3 hours hard stop from brief draw to submission.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 3,
+    "score": 0.693,
+    "query": "timebox",
+    "tags": [
+      "timebox"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F09",
+    "claim": "Public URL (GitHub Pages / Hugging Face Spaces / Streamlit Cloud) + source in repo Responsiveness",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 4,
+    "score": 0.694,
+    "query": "deploy",
+    "tags": [
+      "deploy"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F10",
+    "claim": "Logs and cost reports make every output auditable, answering \"how was this AI content made?\" Students graduate with a real-client portfolio piece and a reproducible agentic system on GitHub.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 1,
+    "score": 0.774,
+    "query": "portfolio",
+    "tags": [
+      "portfolio"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F11",
+    "claim": "Any hosted API (Claude, GPT, Gemini) or local open models via Ollama / vLLM (Llama, Qwen, Mistral) RAG",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 3,
+    "score": 0.709,
+    "query": "local_models",
+    "tags": [
+      "local_models"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F12",
+    "claim": "LangGraph, CrewAI, AutoGen / AG2, OpenAI Agents SDK, Claude Agent SDK, or custom Python orchestrator LLMs",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 3,
+    "score": 0.731,
+    "query": "frameworks",
+    "tags": [
+      "frameworks"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F13",
+    "claim": ", 40 s Tone: energetic, curious Must include: one real lab activity from the fact sheet Must avoid: invented project names or results CTA: \"Explore the AI electives\"",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 9,
+    "score": 0.442,
+    "query": "must:mention of real lab infrastructure",
+    "tags": [
+      "must:mention of real lab infrastructure"
+    ],
+    "verified": true
+  },
+  {
+    "id": "F14",
+    "claim": "Single prompt / no real orchestration.",
+    "source": "LY_AgenticAI_Lab_Handout.pdf",
+    "page": 7,
+    "score": 0.282,
+    "query": "must:real-world deployment skills",
+    "tags": [
+      "must:real-world deployment skills"
+    ],
+    "verified": true
+  }
+]

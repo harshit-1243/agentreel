@@ -1,0 +1,35 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+.s05-ln { position:absolute; left:0; width:900px; display:grid; grid-template-columns: 250px 290px 120px 110px 80px;
+      font-family:'JetBrains Mono',monospace; font-size:28px; color:#263a8c; }</style>
+  <div id="root" data-composition-id="s05" data-width="1080" data-height="1920">
+
+    <div id="s05-k" class="kick" style="position:absolute;top:220px;left:96px;">LOGS/RUN_LOG.JSONL · RUN G04-C05-03</div>
+    <div id="s05-term" class="card" style="left:60px;top:290px;width:960px;height:800px;">
+      <div style="display:flex;gap:12px;padding:26px 30px;border-bottom:1px solid #263a8c;">
+        <i style="width:18px;height:18px;background:#e8412c;"></i><i style="width:18px;height:18px;background:#263a8c;"></i><i style="width:18px;height:18px;background:#263a8c;"></i></div>
+      <div style="position:absolute;left:34px;top:96px;width:900px;height:580px;"><div class="s05-ln" style="top:0px;"><span class="amber">planner       </span><span>llm</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:52px;"><span class="amber">researcher    </span><span>pymupdf+splitter</span><span class="mute">2.51s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:104px;"><span class="amber">researcher    </span><span>vector-search</span><span class="mute">27.16s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:156px;"><span class="amber">researcher    </span><span>llm</span><span class="mute">0.01s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:208px;"><span class="amber">researcher    </span><span>write</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:260px;"><span class="amber">scriptwriter  </span><span>llm</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:312px;"><span class="amber">critic        </span><span>rules:script</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">fail</span></div><div class="s05-ln" style="top:364px;"><span class="amber">scriptwriter  </span><span>llm</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:416px;"><span class="amber">critic        </span><span>rules:script</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:468px;"><span class="amber">storyboarder  </span><span>llm</span><span class="mute">0.00s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div><div class="s05-ln" style="top:520px;"><span class="amber">asset_generato</span><span>edge-tts</span><span class="mute">2.74s</span><span style="color:#263a8c;">₹0.00</span><span class="mute">ok</span></div></div>
+      <div id="s05-cmd" class="mono" style="position:absolute;left:34px;bottom:44px;font-size:28px;color:#263a8c;white-space:nowrap;overflow:hidden;width:0;">
+        <span class="mute">$ </span>python run.py --brief briefs/C05.yaml --seed 42</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s05-term", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#s05-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0.1);
+    tl.fromTo(".s05-ln", { opacity: 0 }, { opacity: 1, duration: 0.05, stagger: 0.220 }, 0.35);
+    tl.fromTo("#s05-cmd", { width: 0 }, { width: 900, duration: 1.0, ease: "steps(52)" }, 3.18);
+    tl.to("#s05-term", { scaleY: 0.82, scaleX: 0.96, opacity: 0, filter: "blur(8px)", duration: 0.28, ease: "power3.in" }, 5.42);
+    tl.to("#s05-k", { opacity: 0, duration: 0.2 }, 5.42);
+    window.__timelines["s05"] = tl;
+  </script>
+</template>

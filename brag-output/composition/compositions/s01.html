@@ -1,0 +1,30 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+</style>
+  <div id="root" data-composition-id="s01" data-width="1080" data-height="1920">
+
+    <div id="s01-k" class="kick" style="position:absolute;top:300px;left:96px;">BRIEF C05 · ASPIRANTS &amp; RECRUITERS</div>
+    <div id="s01-q" class="serif plate" style="position:absolute;top:380px;left:80px;right:50px;font-size:126px;line-height:.94;font-stretch:104%;">
+      What does an <span class="red">AI&#8209;ready</span> graduate <span id="s01-w" style="display:inline-block;">build?</span>
+    </div>
+    <div id="s01-line" style="position:absolute;top:1090px;left:96px;width:0;height:4px;background:#e8412c;"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s01-w", { opacity: 0, filter: "blur(10px)", y: 30 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.22, ease: "power4.out" }, 1.51);
+    tl.fromTo("#s01-line", { width: 0 }, { width: 520, duration: 0.6, ease: "expo.out" }, 1.56);
+    tl.to("#s01-q", { scale: 1.6, opacity: 0, filter: "blur(14px)", transformOrigin: "50% 40%", duration: 0.3, ease: "power3.in" }, 2.16);
+    tl.to(["#s01-k", "#s01-line"], { opacity: 0, duration: 0.2 }, 2.16);
+    window.__timelines["s01"] = tl;
+  </script>
+</template>

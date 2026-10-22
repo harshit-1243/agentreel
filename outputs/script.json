@@ -1,0 +1,133 @@
+{
+  "version": 2,
+  "hooks": [
+    {
+      "text": "What does an AI-ready graduate build?",
+      "words": 6,
+      "est_s": 2.0,
+      "score": 4.9,
+      "fits_3s": true
+    },
+    {
+      "text": "What does an AI-ready graduate actually build?",
+      "words": 7,
+      "est_s": 2.33,
+      "score": 4.8,
+      "fits_3s": true
+    },
+    {
+      "text": "Recruiters, meet the AI-ready graduate.",
+      "words": 5,
+      "est_s": 1.67,
+      "score": 3.0,
+      "fits_3s": true
+    }
+  ],
+  "lines": [
+    {
+      "id": "L01",
+      "key": "hook",
+      "role": "hook",
+      "text": "What does an AI-ready graduate build?",
+      "fact_ids": [],
+      "priority": 0,
+      "est_start": 0.0,
+      "est_end": 2.86
+    },
+    {
+      "id": "L02",
+      "key": "lab",
+      "role": "body",
+      "text": "In the final-year Agentic AI Lab at K J Somaiya, students don't just study AI. They ship it.",
+      "fact_ids": [
+        "F01"
+      ],
+      "priority": 0,
+      "est_start": 2.86,
+      "est_end": 10.93
+    },
+    {
+      "id": "L03",
+      "key": "multiagent",
+      "role": "body",
+      "text": "Multi-agent pipelines, with clear roles, hand-offs and a critic loop.",
+      "fact_ids": [
+        "F02"
+      ],
+      "priority": 1,
+      "est_start": 10.93,
+      "est_end": 15.53
+    },
+    {
+      "id": "L04",
+      "key": "constraint",
+      "role": "body",
+      "text": "A sealed brief. A three-hour hard stop. A five-hundred-rupee API budget.",
+      "fact_ids": [
+        "F08",
+        "F07"
+      ],
+      "priority": 2,
+      "est_start": 15.53,
+      "est_end": 20.57
+    },
+    {
+      "id": "L05",
+      "key": "logging",
+      "role": "body",
+      "text": "Every call logged, every rupee tracked, one command to reproduce the run.",
+      "fact_ids": [
+        "F05"
+      ],
+      "priority": 2,
+      "est_start": 20.57,
+      "est_end": 26.03
+    },
+    {
+      "id": "L06",
+      "key": "deploy",
+      "role": "body",
+      "text": "Then they deploy, live on GitHub Pages, Hugging Face Spaces or Streamlit Cloud.",
+      "fact_ids": [
+        "F09"
+      ],
+      "priority": 0,
+      "est_start": 26.03,
+      "est_end": 31.93
+    },
+    {
+      "id": "L07",
+      "key": "responsible",
+      "role": "body",
+      "text": "Responsible AI built in: grounding, consent, disclosure, licensing.",
+      "fact_ids": [
+        "F06"
+      ],
+      "priority": 2,
+      "est_start": 31.93,
+      "est_end": 35.66
+    },
+    {
+      "id": "L08",
+      "key": "proof",
+      "role": "body",
+      "text": "The proof? This reel was planned, scripted and edited by agents built in that lab.",
+      "fact_ids": [
+        "SELF:run_log"
+      ],
+      "priority": 1,
+      "est_start": 35.66,
+      "est_end": 42.43
+    },
+    {
+      "id": "L09",
+      "key": "cta",
+      "role": "cta",
+      "text": "Hire our AI-ready graduates today.",
+      "fact_ids": [],
+      "priority": 0,
+      "est_start": 42.43,
+      "est_end": 44.86
+    }
+  ]
+}

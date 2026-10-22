@@ -1,0 +1,115 @@
+ts,run_id,stage,provider,model,tool,units,input_tokens,output_tokens,cost_inr,latency_s,status
+2026-10-22T19:54:39,G04-C05-01,orchestrator,local,-,start,0 tok,0,0,0.0,0.0,ok
+2026-10-22T19:54:39,G04-C05-01,planner,offline,offline-template,llm,883 tok,310,573,0.0,0.0,ok
+2026-10-22T19:54:43,G04-C05-01,researcher,local,PyMuPDF,pymupdf+splitter,9 pages / 68 chunks,0,0,0.0,3.618,ok
+2026-10-22T19:56:00,G04-C05-01,researcher,local,chromadb+minilm,vector-search,14 queries x k=4,0,0,0.0,77.311,ok
+2026-10-22T19:56:00,G04-C05-01,researcher,offline,offline-template,llm,4595 tok,3483,1112,0.0,0.006,ok
+2026-10-22T19:56:00,G04-C05-01,researcher,local,-,write,14 facts,0,0,0.0,0.0,ok
+2026-10-22T19:56:00,G04-C05-01,scriptwriter,offline,offline-template,llm,2173 tok,1230,943,0.0,0.001,ok
+2026-10-22T19:56:00,G04-C05-01,critic,local,rule-engine,rules:script,7/8 pass,0,0,0.0,0.0,fail
+2026-10-22T19:56:00,G04-C05-01,scriptwriter,offline,offline-template,llm,1976 tok,1238,738,0.0,0.001,ok
+2026-10-22T19:56:00,G04-C05-01,critic,local,rule-engine,rules:script,8/8 pass,0,0,0.0,0.0,ok
+2026-10-22T19:56:00,G04-C05-01,storyboarder,offline,offline-template,llm,1671 tok,606,1065,0.0,0.001,ok
+2026-10-22T19:56:09,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,37 chars / 2.16s,0,0,0.0,8.909,ok
+2026-10-22T19:56:20,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,92 chars / 7.03s,0,0,0.0,10.648,ok
+2026-10-22T19:56:22,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,69 chars / 4.49s,0,0,0.0,1.974,ok
+2026-10-22T19:56:24,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,72 chars / 5.26s,0,0,0.0,1.994,ok
+2026-10-22T19:57:02,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,73 chars / 5.42s,0,0,0.0,38.306,ok
+2026-10-22T19:57:12,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,79 chars / 5.71s,0,0,0.0,10.182,ok
+2026-10-22T19:57:18,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,67 chars / 5.93s,0,0,0.0,5.494,ok
+2026-10-22T19:57:20,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,82 chars / 5.66s,0,0,0.0,1.79,ok
+2026-10-22T19:57:25,G04-C05-01,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,34 chars / 2.64s,0,0,0.0,5.094,ok
+2026-10-22T19:57:26,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.018,ok
+2026-10-22T19:57:27,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.006,ok
+2026-10-22T19:57:28,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.083,ok
+2026-10-22T19:57:29,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.0,ok
+2026-10-22T19:57:30,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.041,ok
+2026-10-22T19:57:31,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.971,ok
+2026-10-22T19:57:32,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.013,ok
+2026-10-22T19:57:34,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.48,ok
+2026-10-22T19:57:35,G04-C05-01,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.32,ok
+2026-10-22T19:57:37,G04-C05-01,asset_generator,local,numpy-synth,procedural-music,53.4s stereo 48k,0,0,0.0,1.992,ok
+2026-10-22T19:57:37,G04-C05-01,asset_generator,local,-,manifest,28 assets,0,0,0.0,0.0,ok
+2026-10-22T20:00:08,G04-C05-01,editor,local,moviepy+libx264,moviepy-render,51.00s @ 30fps,0,0,0.0,147.906,ok
+2026-10-22T20:00:17,G04-C05-01,editor,local,ffmpeg loudnorm 2-pass,ffmpeg-loudnorm,in -21.55 LUFS -> -14,0,0,0.0,8.957,ok
+2026-10-22T20:00:17,G04-C05-01,editor,local,-,srt,36 cues,0,0,0.0,0.0,ok
+2026-10-22T20:00:23,G04-C05-01,critic,local,rule-engine,rules:video,12/12 pass,0,0,0.0,0.0,ok
+2026-10-22T20:00:23,G04-C05-01,human,local,-,checkpoint,0 tok,0,0,0.0,0.0,approved
+2026-10-22T20:00:23,G04-C05-01,critic,local,-,qa_report,0 tok,0,0,0.0,0.0,pass
+2026-10-22T20:00:23,G04-C05-01,orchestrator,local,-,finish,0 tok,0,0,0.0,344.205,ok
+2026-10-22T22:34:38,G04-C05-02,orchestrator,local,-,start,0 tok,0,0,0.0,0.0,ok
+2026-10-22T22:34:38,G04-C05-02,planner,offline,offline-template,llm,883 tok,310,573,0.0,0.0,ok
+2026-10-22T22:34:41,G04-C05-02,researcher,local,PyMuPDF,pymupdf+splitter,9 pages / 68 chunks,0,0,0.0,3.044,ok
+2026-10-22T22:35:58,G04-C05-02,researcher,local,chromadb+minilm,vector-search,14 queries x k=4,0,0,0.0,77.612,ok
+2026-10-22T22:35:58,G04-C05-02,researcher,offline,offline-template,llm,4595 tok,3483,1112,0.0,0.005,ok
+2026-10-22T22:35:58,G04-C05-02,researcher,local,-,write,14 facts,0,0,0.0,0.0,ok
+2026-10-22T22:35:58,G04-C05-02,scriptwriter,offline,offline-template,llm,2173 tok,1230,943,0.0,0.001,ok
+2026-10-22T22:35:58,G04-C05-02,critic,local,rule-engine,rules:script,7/8 pass,0,0,0.0,0.0,fail
+2026-10-22T22:35:58,G04-C05-02,scriptwriter,offline,offline-template,llm,1976 tok,1238,738,0.0,0.001,ok
+2026-10-22T22:35:58,G04-C05-02,critic,local,rule-engine,rules:script,8/8 pass,0,0,0.0,0.0,ok
+2026-10-22T22:35:58,G04-C05-02,storyboarder,offline,offline-template,llm,1671 tok,606,1065,0.0,0.0,ok
+2026-10-22T22:36:12,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,37 chars / 2.16s,0,0,0.0,13.422,ok
+2026-10-22T22:36:13,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,92 chars / 7.03s,0,0,0.0,1.112,ok
+2026-10-22T22:36:15,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,69 chars / 4.49s,0,0,0.0,1.67,ok
+2026-10-22T22:36:16,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,72 chars / 5.26s,0,0,0.0,1.083,ok
+2026-10-22T22:36:20,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,73 chars / 5.42s,0,0,0.0,4.26,ok
+2026-10-22T22:36:21,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,79 chars / 5.71s,0,0,0.0,1.15,ok
+2026-10-22T22:36:22,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,67 chars / 5.93s,0,0,0.0,1.126,ok
+2026-10-22T22:36:24,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,82 chars / 5.66s,0,0,0.0,1.566,ok
+2026-10-22T22:36:34,G04-C05-02,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,34 chars / 2.64s,0,0,0.0,10.134,ok
+2026-10-22T22:36:35,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.139,ok
+2026-10-22T22:36:37,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.859,ok
+2026-10-22T22:36:38,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.883,ok
+2026-10-22T22:36:39,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.82,ok
+2026-10-22T22:36:40,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.951,ok
+2026-10-22T22:36:41,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.919,ok
+2026-10-22T22:36:42,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.932,ok
+2026-10-22T22:36:43,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.085,ok
+2026-10-22T22:36:44,G04-C05-02,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.157,ok
+2026-10-22T22:36:49,G04-C05-02,asset_generator,local,numpy-synth,procedural-music,53.4s stereo 48k,0,0,0.0,5.354,ok
+2026-10-22T22:36:50,G04-C05-02,asset_generator,local,-,manifest,29 assets,0,0,0.0,0.0,ok
+2026-10-22T22:38:26,G04-C05-02,editor,local,moviepy+libx264,moviepy-render,51.00s @ 30fps,0,0,0.0,91.14,ok
+2026-10-22T22:38:32,G04-C05-02,editor,local,ffmpeg loudnorm 2-pass,ffmpeg-loudnorm,in -21.54 LUFS -> -14,0,0,0.0,6.778,ok
+2026-10-22T22:38:33,G04-C05-02,editor,local,-,srt,36 cues,0,0,0.0,0.0,ok
+2026-10-22T22:38:36,G04-C05-02,critic,local,rule-engine,rules:video,12/12 pass,0,0,0.0,0.0,ok
+2026-10-22T22:38:36,G04-C05-02,human,local,-,checkpoint,0 tok,0,0,0.0,0.0,approved
+2026-10-22T22:38:36,G04-C05-02,critic,local,-,qa_report,0 tok,0,0,0.0,0.0,pass
+2026-10-22T22:38:37,G04-C05-02,orchestrator,local,-,finish,0 tok,0,0,0.0,239.174,ok
+2026-10-22T22:39:19,G04-C05-03,orchestrator,local,-,start,0 tok,0,0,0.0,0.0,ok
+2026-10-22T22:39:19,G04-C05-03,planner,offline,offline-template,llm,883 tok,310,573,0.0,0.0,ok
+2026-10-22T22:39:22,G04-C05-03,researcher,local,PyMuPDF,pymupdf+splitter,9 pages / 68 chunks,0,0,0.0,2.513,ok
+2026-10-22T22:39:49,G04-C05-03,researcher,local,chromadb+minilm,vector-search,14 queries x k=4,0,0,0.0,27.165,ok
+2026-10-22T22:39:49,G04-C05-03,researcher,offline,offline-template,llm,4595 tok,3483,1112,0.0,0.005,ok
+2026-10-22T22:39:49,G04-C05-03,researcher,local,-,write,14 facts,0,0,0.0,0.0,ok
+2026-10-22T22:39:49,G04-C05-03,scriptwriter,offline,offline-template,llm,2173 tok,1230,943,0.0,0.001,ok
+2026-10-22T22:39:49,G04-C05-03,critic,local,rule-engine,rules:script,7/8 pass,0,0,0.0,0.0,fail
+2026-10-22T22:39:49,G04-C05-03,scriptwriter,offline,offline-template,llm,1976 tok,1238,738,0.0,0.001,ok
+2026-10-22T22:39:49,G04-C05-03,critic,local,rule-engine,rules:script,8/8 pass,0,0,0.0,0.0,ok
+2026-10-22T22:39:49,G04-C05-03,storyboarder,offline,offline-template,llm,1669 tok,606,1063,0.0,0.001,ok
+2026-10-22T22:39:52,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,37 chars / 2.16s,0,0,0.0,2.736,ok
+2026-10-22T22:40:08,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,92 chars / 7.03s,0,0,0.0,16.68,ok
+2026-10-22T22:40:10,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,69 chars / 4.49s,0,0,0.0,1.461,ok
+2026-10-22T22:40:26,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,72 chars / 5.26s,0,0,0.0,16.099,ok
+2026-10-22T22:40:27,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,73 chars / 5.42s,0,0,0.0,1.154,ok
+2026-10-22T22:40:44,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,79 chars / 5.71s,0,0,0.0,17.202,ok
+2026-10-22T22:40:45,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,67 chars / 5.93s,0,0,0.0,1.115,ok
+2026-10-22T22:40:47,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,82 chars / 5.66s,0,0,0.0,1.133,ok
+2026-10-22T22:40:48,G04-C05-03,asset_generator,microsoft-edge,en-US-AndrewMultilingualNeural,edge-tts,34 chars / 2.64s,0,0,0.0,1.811,ok
+2026-10-22T22:40:50,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.059,ok
+2026-10-22T22:40:51,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.569,ok
+2026-10-22T22:40:52,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,0.93,ok
+2026-10-22T22:40:53,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.165,ok
+2026-10-22T22:40:54,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.027,ok
+2026-10-22T22:40:56,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.164,ok
+2026-10-22T22:40:57,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.039,ok
+2026-10-22T22:40:58,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.104,ok
+2026-10-22T22:40:59,G04-C05-03,asset_generator,local,PIL/numpy,procedural-image,1 image 1188x2112,0,0,0.0,1.149,ok
+2026-10-22T22:41:00,G04-C05-03,asset_generator,local,numpy-synth,procedural-music,53.4s stereo 48k,0,0,0.0,1.376,ok
+2026-10-22T22:41:00,G04-C05-03,asset_generator,local,-,manifest,29 assets,0,0,0.0,0.0,ok
+2026-10-22T22:42:33,G04-C05-03,editor,local,moviepy+libx264,moviepy-render,51.00s @ 30fps,0,0,0.0,90.73,ok
+2026-10-22T22:42:40,G04-C05-03,editor,local,ffmpeg loudnorm 2-pass,ffmpeg-loudnorm,in -21.55 LUFS -> -14,0,0,0.0,6.448,ok
+2026-10-22T22:42:40,G04-C05-03,editor,local,-,srt,36 cues,0,0,0.0,0.0,ok
+2026-10-22T22:42:44,G04-C05-03,critic,local,rule-engine,rules:video,12/12 pass,0,0,0.0,0.0,ok
+2026-10-22T22:42:44,G04-C05-03,human,local,-,checkpoint,0 tok,0,0,0.0,0.0,approved
+2026-10-22T22:42:44,G04-C05-03,critic,local,-,qa_report,0 tok,0,0,0.0,0.0,pass
+2026-10-22T22:42:44,G04-C05-03,orchestrator,local,-,finish,0 tok,0,0,0.0,205.169,ok

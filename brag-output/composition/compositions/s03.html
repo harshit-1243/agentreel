@@ -1,0 +1,64 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+.s03-row { position:absolute; left:0; width:830px; height:88px; display:flex; align-items:center; padding:0 30px;
+      background:#ede9e0; border:2px solid #263a8c;  }</style>
+  <div id="root" data-composition-id="s03" data-width="1080" data-height="1920">
+
+    <div id="s03-k" class="kick" style="position:absolute;top:220px;left:96px;">SEVEN AGENTS · ONE COMMAND</div>
+    <div id="s03-lane" style="position:absolute;left:90px;top:290px;width:830px;height:740px;"><div class="s03-row" id="s03-row0" style="top:0px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">01</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Planner</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">0.0s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">plan.json</span></div><div class="s03-row" id="s03-row1" style="top:104px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">02</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Researcher</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">29.7s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">facts.json</span></div><div class="s03-row" id="s03-row2" style="top:208px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">03</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Scriptwriter</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">0.0s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">script.md</span></div><div class="s03-row" id="s03-row3" style="top:312px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">04</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Storyboarder</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">0.0s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">storyboard.json</span></div><div class="s03-row" id="s03-row4" style="top:416px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">05</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Asset Gen</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">71.0s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">manifest.csv</span></div><div class="s03-row" id="s03-row5" style="top:520px;">
+          <span class="mono amber" style="font-size:28px;width:60px;">06</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Editor</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">97.2s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">final.mp4</span></div><div class="s03-row" id="s03-row6" style="top:624px;border-color:#e8412c;">
+          <span class="mono amber" style="font-size:28px;width:60px;">07</span>
+          <span style="flex:1;font-weight:700;font-size:38px;white-space:nowrap;">Critic</span>
+          <span class="mono mute" style="font-size:28px;margin-right:22px;white-space:nowrap;">0.0s</span>
+          <span class="mono" style="font-size:28px;color:#263a8c;">qa_report.json</span></div></div>
+    <svg id="s03-loop" style="position:absolute;left:900px;top:290px;" width="140" height="740" viewBox="0 0 140 740">
+      <path id="s03-path" d="M 20 668 C 120 668, 120 252, 20 252" fill="none" stroke="#e8412c" stroke-width="7" stroke-linecap="round" stroke-dasharray="560" stroke-dashoffset="560"/>
+      <path id="s03-head" d="M 20 252 l 26 -16 M 20 252 l 26 16" stroke="#e8412c" stroke-width="7" stroke-linecap="round" opacity="0"/>
+    </svg>
+    <div id="s03-lbl" class="mono red" style="position:absolute;top:1046px;left:96px;font-size:30px;letter-spacing:.1em;">CRITIC → SCRIPTWRITER · MAX 3 LOOPS</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s03-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+    tl.fromTo(".s03-row", { opacity: 0.0, x: 60, filter: "blur(6px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.35, stagger: 0.320, ease: "expo.out" }, 0.1);
+    tl.fromTo("#s03-path", { strokeDashoffset: 560 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.inOut" }, 3.58);
+    tl.fromTo("#s03-head", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 4.03);
+    tl.fromTo("#s03-lbl", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 3.78);
+    tl.to("#s03-lane", { x: -1100, filter: "blur(10px)", duration: 0.28, ease: "power3.in" }, 4.51);
+    tl.to(["#s03-loop", "#s03-lbl", "#s03-k"], { opacity: 0, duration: 0.18 }, 4.54);
+    window.__timelines["s03"] = tl;
+  </script>
+</template>

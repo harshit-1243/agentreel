@@ -1,0 +1,33 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+.s08-f { position:absolute; width:290px; height:515px; object-fit:cover;  border:2px solid #263a8c; }</style>
+  <div id="root" data-composition-id="s08" data-width="1080" data-height="1920">
+
+    <div id="s08-k" class="kick" style="position:absolute;top:220px;left:96px;">FRAMES RENDERED BY THE EDITOR AGENT</div>
+    <div id="s08-mask" style="position:absolute;left:90px;top:290px;width:900px;height:800px;overflow:hidden;" data-layout-allow-overflow>
+      <div id="s08-grid" style="position:absolute;left:0;top:0;width:900px;height:1560px;"><img class="s08-f" src="assets/frames/S01.jpg" style="left:0px;top:0px;" alt=""><img class="s08-f" src="assets/frames/S02.jpg" style="left:300px;top:0px;" alt=""><img class="s08-f" src="assets/frames/S03.jpg" style="left:600px;top:0px;" alt=""><img class="s08-f" src="assets/frames/S04.jpg" style="left:0px;top:520px;" alt=""><img class="s08-f" src="assets/frames/S05.jpg" style="left:300px;top:520px;" alt=""><img class="s08-f" src="assets/frames/S06.jpg" style="left:600px;top:520px;" alt=""><img class="s08-f" src="assets/frames/S07.jpg" style="left:0px;top:1040px;" alt=""><img class="s08-f" src="assets/frames/S08.jpg" style="left:300px;top:1040px;" alt=""><img class="s08-f" src="assets/frames/S09.jpg" style="left:600px;top:1040px;" alt=""></div></div>
+    <div id="s08-badge" style="position:absolute;left:150px;top:560px;width:780px;padding:40px 44px;background:#ede9e0;border:3px solid #e8412c;">
+      <div class="mono amber" style="font-size:28px;letter-spacing:.14em;">RUN G04-C05-03</div>
+      <div class="serif" style="font-size:96px;line-height:1;margin-top:12px;">QA <span class="red" style="">passed</span></div>
+      <div class="mono mute" style="font-size:28px;margin-top:14px;">20/20 rules · 51.1 s · -14.3 LUFS · ₹0.00</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s08-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+    tl.fromTo("#s08-mask", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.5, ease: "expo.out" }, 0);
+    tl.fromTo("#s08-grid", { y: 0 }, { y: -760, duration: 5.56, ease: "power1.inOut" }, 0.2);
+    tl.fromTo("#s08-badge", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "expo.out" }, 3.98);
+    tl.to(["#s08-mask", "#s08-badge", "#s08-k"], { opacity: 0, duration: 0.15 }, 5.79);
+    window.__timelines["s08"] = tl;
+  </script>
+</template>

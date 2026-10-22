@@ -1,0 +1,90 @@
+{
+  "brief_id": "C05",
+  "run_id": "G04-C05-03",
+  "seed": 42,
+  "deliverable": "outputs/G04_C05_final.mp4",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "codec": "h264-high/yuv420p",
+    "audio": "aac 48kHz stereo 160k",
+    "loudness_lufs": -14
+  },
+  "timing": {
+    "target_s": 45,
+    "min_s": 30,
+    "max_s": 60,
+    "vo_s": 37.4,
+    "end_card_s": 4.0,
+    "hook_s": 3
+  },
+  "word_budget": {
+    "target": 86,
+    "max": 98,
+    "wps": 2.3
+  },
+  "tts_rate": "+5%",
+  "shot_count": {
+    "min": 6,
+    "max": 12,
+    "target": 8
+  },
+  "budget_inr": {
+    "total": 500.0,
+    "stages": {
+      "planner": 10.0,
+      "researcher": 50.0,
+      "scriptwriter": 100.0,
+      "storyboarder": 50.0,
+      "asset_generator": 200.0,
+      "editor": 40.0,
+      "critic": 50.0
+    }
+  },
+  "time_budget_min": {
+    "total": 180,
+    "stages": {
+      "planner": 5,
+      "researcher": 15,
+      "scriptwriter": 15,
+      "storyboarder": 10,
+      "asset_generator": 40,
+      "editor": 30,
+      "critic": 15
+    }
+  },
+  "stages": [
+    "planner",
+    "researcher",
+    "scriptwriter",
+    "storyboarder",
+    "asset_generator",
+    "editor",
+    "critic"
+  ],
+  "critic_max_loops": 3,
+  "checkpoints": [
+    "pre-export human review (mandatory for Category A/C)"
+  ],
+  "success_criteria": [
+    "duration within 30-60 s, close to 45 s",
+    "1080x1920 @ 30 fps, H.264 High, yuv420p, AAC 48 kHz",
+    "topic clear in first 3 s (hook)",
+    "every factual line cites a verified fact id",
+    "no numbers or statistics that are absent from facts.json",
+    "must include: mention of real lab infrastructure",
+    "must include: real-world deployment skills",
+    "must avoid: exaggerated placement figures",
+    "must avoid: hallucinated statistics",
+    "CTA on end card: Hire our AI-ready graduates today.",
+    "AI-disclosure line on end card",
+    "burned-in captions inside 9:16 safe zones + .srt",
+    "total spend <= Rs 500"
+  ],
+  "creative": {
+    "audience_insight": "Aspirants want proof the degree turns into real skills; recruiters want evidence graduates can ship, log and govern AI systems.",
+    "angle": "Show, don't claim: the reel itself is the proof - built by student-made agents.",
+    "tone": "professional, innovative, authoritative"
+  }
+}

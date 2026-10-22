@@ -1,0 +1,39 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+.s02-r { display:flex; justify-content:space-between; gap:30px; padding:13px 0; border-top:1px solid #263a8c; font-size:30px; }
+    .s02-r span:last-child { text-align:right; }</style>
+  <div id="root" data-composition-id="s02" data-width="1080" data-height="1920">
+
+    <div id="s02-k" class="kick" style="position:absolute;top:250px;left:96px;">FINAL-YEAR · AGENTIC AI LAB · K J SOMAIYA</div>
+    <div id="s02-card" class="card" style="left:90px;top:320px;width:900px;padding:50px 60px 40px;">
+      <div class="mono amber" style="font-size:28px;letter-spacing:.2em;">SEALED BRIEF CARD</div>
+      <div class="serif" style="font-size:50px;line-height:1.02;margin:18px 0 22px;">AI-ready graduate:<br><span class="mute" style="">how the curriculum and labs build industry AI skills</span></div>
+      <div class="s02-r"><span class="mono mute">ID</span><span>C05</span></div><div class="s02-r"><span class="mono mute">CATEGORY</span><span>Responsible AI Usage</span></div><div class="s02-r"><span class="mono mute">AUDIENCE</span><span>Aspirants &amp; recruiters</span></div><div class="s02-r"><span class="mono mute">FORMAT</span><span>9:16 · 45 s</span></div>
+    </div>
+    <div id="s02-a" class="serif" style="position:absolute;top:1015px;left:80px;font-size:104px;line-height:1;">
+      <span id="s02-study" style="position:relative;display:inline-block;">study AI<span id="s02-strike" style="position:absolute;left:-6px;top:56%;height:8px;width:0;background:#e8412c;"></span></span>
+      <span id="s02-ship" class="red" style="display:inline-block;">&nbsp;ship it.</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s02-card", { y: 160, rotation: -4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.7, ease: "expo.out" }, 0.05);
+    tl.fromTo("#s02-k", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
+    tl.fromTo(".s02-r", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3, stagger: 0.07, ease: "power3.out" }, 0.45);
+    tl.fromTo("#s02-study", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, 5.00);
+    tl.fromTo("#s02-strike", { width: 0 }, { width: 400, duration: 0.35, ease: "power2.inOut" }, 5.70);
+    tl.fromTo("#s02-ship", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.28, ease: "back.out(1.6)" }, 6.35);
+    tl.to(["#s02-card", "#s02-a", "#s02-k"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 7.11);
+    window.__timelines["s02"] = tl;
+  </script>
+</template>

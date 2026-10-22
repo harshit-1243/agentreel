@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentReel · G04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ede9e0; --paper2:#e4dfd3; --blue:#263a8c; --red:#e8412c; --over:#220f18;
+  --rule:2px solid var(--blue); --thin:1px solid var(--blue);
+  --sans:'Archivo',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--blue);font-family:var(--sans);font-size:16px;line-height:1.45;font-stretch:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* newsprint fibre, printed once over everything */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;mix-blend-mode:multiply;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .62  0 0 0 0 .6  0 0 0 0 .55  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono)}
+.red{color:var(--red)}
+.dots{background-image:radial-gradient(var(--blue) 32%,transparent 34%);background-size:9px 9px}
+.dots-red{background-image:radial-gradient(var(--red) 34%,transparent 36%);background-size:10px 10px}
+
+/* masthead */
+.top{display:flex;justify-content:space-between;gap:16px;padding:14px 0 10px;border-bottom:var(--thin);font-size:13px;font-weight:600}
+.top a{color:inherit;text-decoration:none;margin-left:16px}.top a:hover{color:var(--red)}
+.mast{position:relative;padding:18px 0 6px}
+.mast h1{font-weight:900;font-stretch:125%;font-size:min(10.6vw,146px);white-space:nowrap;line-height:.82;letter-spacing:-.02em;position:relative}
+.mast h1 span{position:relative;z-index:1}
+.mast h1::before{content:attr(data-t);position:absolute;left:5px;top:4px;color:var(--red);z-index:0;mix-blend-mode:multiply}
+.issue{display:flex;flex-wrap:wrap;gap:6px 26px;border-top:6px solid var(--blue);border-bottom:var(--thin);padding:10px 0;margin-top:14px;font-size:14px;font-weight:600}
+.issue b{font-weight:900;font-stretch:112%}
+.stamp{margin-left:auto;border:3px solid var(--red);color:var(--red);font-weight:900;font-stretch:120%;padding:2px 10px;transform:rotate(-3deg);text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.stamp.fail{border-color:var(--blue);color:var(--blue)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:0;border-bottom:var(--rule)}
+.hero .lead{padding:34px 34px 34px 0;border-right:var(--thin)}
+.hero h2{font-weight:900;font-stretch:108%;font-size:clamp(40px,5.4vw,76px);line-height:.94;letter-spacing:-.02em}
+.hero h2 mark{background:none;color:var(--over);position:relative;z-index:0}
+.hero h2 mark::before{content:"";position:absolute;left:-4px;right:-6px;top:52%;bottom:-2px;background:var(--red);z-index:-1;mix-blend-mode:multiply;transform:skewX(-6deg)}
+.lede{font-size:19px;max-width:600px;margin-top:20px;font-weight:500}
+.cmd{display:inline-block;margin-top:24px;border:var(--rule);padding:10px 14px;font-family:var(--mono);font-size:14px;background:var(--paper2)}
+.cmd b{color:var(--red);font-weight:600}
+.figs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px;border-top:var(--rule)}
+.figs div{padding:12px 12px 0 0;border-right:var(--thin)}
+.figs div:last-child{border-right:0}
+.figs .v{font-weight:900;font-stretch:118%;font-size:42px;line-height:1}
+.figs .l{font-size:13px;font-weight:600;margin-top:4px}
+.hero .side{padding:34px 0 30px 34px}
+.frame{position:relative;width:min(300px,100%);margin:0 auto}
+.frame::before{content:"";position:absolute;left:8px;top:8px;right:-8px;bottom:-8px;background:var(--red);mix-blend-mode:multiply}
+.frame video{position:relative;display:block;width:100%;aspect-ratio:9/16;background:var(--paper2);border:3px solid var(--blue);object-fit:cover}
+.figcap{font-size:13px;margin-top:18px;text-align:left;border-top:var(--thin);padding-top:6px;font-weight:600}
+
+/* sections */
+section{padding:46px 0 0}
+.sh{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:end;border-bottom:var(--rule);padding-bottom:10px;margin-bottom:22px}
+.sh h3{font-weight:900;font-stretch:118%;font-size:clamp(30px,3.6vw,46px);line-height:.95;letter-spacing:-.01em}
+.sh p{font-size:14px;font-weight:500;justify-self:end;max-width:460px;text-align:right}
+
+/* brief: a printed form */
+.form{display:grid;grid-template-columns:repeat(4,1fr);border:var(--rule)}
+.form>div{padding:12px 14px;border-right:var(--thin);border-bottom:var(--thin)}
+.form>div:nth-child(4n){border-right:0}
+.form .k{font-size:12px;font-weight:800;font-stretch:112%;text-transform:uppercase;letter-spacing:.04em}
+.form .v{margin-top:4px;font-size:16px;font-weight:500}
+.form .wide{grid-column:span 2}
+.form .cta{font-weight:900;font-stretch:110%;font-size:24px;line-height:1.05}
+.tick{display:inline-block;margin:3px 10px 0 0;font-weight:600}
+.tick::before{content:"";display:inline-block;width:12px;height:12px;border:2px solid var(--blue);margin-right:6px;vertical-align:-1px}
+.tick.no::before{background:var(--red);border-color:var(--red)}
+.tick.yes::before{background:var(--blue)}
+
+/* agents */
+.lane{display:grid;grid-template-columns:repeat(7,1fr);border:var(--rule)}
+.node{padding:14px 12px;border-right:var(--thin);position:relative;min-height:170px;display:flex;flex-direction:column}
+.node:last-child{border-right:0}
+.node.critic{background:var(--red);color:var(--over)}
+.node .i{font-weight:900;font-stretch:125%;font-size:30px;line-height:1}
+.node .t{font-weight:800;font-size:16px;margin:6px 0 10px}
+.node .m{font-size:13px;line-height:1.5;font-weight:500}
+.node .o{margin-top:auto;font-family:var(--mono);font-size:11.5px;border-top:var(--thin);padding-top:6px}
+.node.critic .o{border-color:var(--over)}
+.bar{height:10px;margin:8px 0 10px;border:1px solid currentColor}
+.bar span{display:block;height:100%;background:currentColor}
+.loop{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-size:14px;font-weight:600}
+.loop .it::before{content:"";display:inline-block;width:12px;height:12px;margin-right:7px;vertical-align:-1px;border:2px solid var(--blue)}
+.loop .it.p::before{background:var(--blue)}
+.loop .it.f{color:var(--red)}.loop .it.f::before{background:var(--red);border-color:var(--red)}
+.graphimg{display:block;width:100%;margin-top:22px;border:var(--rule)}
+
+/* facts: clippings */
+.facts{columns:3 300px;column-gap:28px;column-rule:var(--thin)}
+.fact{break-inside:avoid;padding:0 0 18px;margin-bottom:18px;border-bottom:var(--thin)}
+.fact q{display:block;font-size:18px;line-height:1.3;font-weight:600;quotes:"“" "”"}
+.fact .src{margin-top:10px;font-size:12px;font-family:var(--mono);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fact .id{background:var(--blue);color:var(--paper);font-weight:600;padding:1px 6px}
+.fact .score{height:6px;margin-top:10px}
+.fact .score span{display:block;height:100%}
+
+/* script */
+.script{display:grid;grid-template-columns:.75fr 1.25fr;gap:0;border:var(--rule)}
+.hooks{padding:18px;border-right:var(--thin)}
+.lines{padding:6px 18px 12px}
+.lbl{font-size:12px;font-weight:800;font-stretch:112%;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
+.hook{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:12px 0;border-top:var(--thin)}
+.hook .box{width:20px;height:20px;border:2px solid var(--blue);margin-top:4px;position:relative}
+.hook.win .box{background:var(--red);border-color:var(--red)}
+.hook.win .box::after{content:"";position:absolute;left:5px;top:0;width:6px;height:12px;border:solid var(--over);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.hook .tx{font-weight:800;font-size:19px;line-height:1.15}
+.hook .meta{font-size:12.5px;margin-top:5px;font-family:var(--mono)}
+.ln{display:grid;grid-template-columns:96px 1fr auto;gap:14px;padding:10px 0;border-bottom:var(--thin);align-items:baseline}
+.ln:last-child{border:0}
+.ln .ts{font-family:var(--mono);font-size:12px}
+.ln .tx{font-size:16px;font-weight:500}
+.ln.hook-l .tx,.ln.cta .tx{font-weight:900;font-stretch:110%;font-size:20px}
+.ln.cta .tx{color:var(--red)}
+.ln .fx span{font-family:var(--mono);font-size:11px;border:1px solid var(--blue);padding:0 5px;margin-left:4px}
+
+/* storyboard */
+.strip{display:flex;gap:18px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory}
+.strip::-webkit-scrollbar{height:8px}.strip::-webkit-scrollbar-thumb{background:var(--blue)}
+.shot{flex:0 0 196px;scroll-snap-align:start}
+.shot .fr{aspect-ratio:9/16;border:3px solid var(--blue);overflow:hidden;background:var(--paper2)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .cap{display:flex;justify-content:space-between;font-size:12px;font-weight:800;margin-top:8px;border-top:var(--thin);padding-top:4px}
+.shot .vo{font-size:13.5px;margin-top:6px;line-height:1.35;font-weight:500}
+
+/* qa */
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule)}
+.qa>div{padding:16px 18px}
+.qa>div:first-child{border-right:var(--thin)}
+.chk{display:grid;grid-template-columns:22px 46px 1fr;gap:8px;padding:8px 0;border-top:var(--thin);font-size:14.5px;align-items:baseline}
+.chk .s{width:16px;height:16px;border:2px solid var(--blue);align-self:center;position:relative}
+.chk .s.y{background:var(--blue)}
+.chk .s.n{background:var(--red);border-color:var(--red)}
+.chk .c{font-family:var(--mono);font-size:12px}
+.chk .d{display:block;font-family:var(--mono);font-size:11.5px;margin-top:2px;opacity:.85}
+.rulers{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:26px}
+.ruler .v{font-weight:900;font-stretch:118%;font-size:54px;line-height:1}
+.ruler .v small{font-size:22px;font-stretch:100%}
+.ruler .l{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.scale{position:relative;height:30px;margin-top:12px;border-bottom:var(--rule);
+  background-image:linear-gradient(90deg,var(--blue) 1px,transparent 1px);background-size:10% 10px;background-repeat:repeat-x;background-position:0 100%}
+.scale .ok{position:absolute;bottom:0;height:12px}
+.scale .pin{position:absolute;bottom:-4px;width:4px;height:34px;background:var(--red)}
+.scale-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;margin-top:4px}
+
+/* cost */
+.cost{display:grid;grid-template-columns:1.35fr .65fr;gap:0;border:var(--rule)}
+.cost>div{padding:6px 16px 14px}
+.cost>div:first-child{border-right:var(--thin);overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;text-align:left;padding:10px 8px;border-bottom:var(--rule)}
+td{padding:8px;border-bottom:var(--thin)}
+td.r,th.r{text-align:right;font-family:var(--mono)}
+.hbar{height:10px;background:var(--blue)}
+.budget .big{font-weight:900;font-stretch:120%;font-size:68px;line-height:.9;margin-top:10px}
+.budget .big small{font-size:24px;font-stretch:100%}
+.meter{height:16px;border:var(--rule);margin:10px 0 18px}
+.meter span{display:block;height:100%;background:var(--red);min-width:3px}
+
+/* logs: printed receipt */
+.receipt{max-width:860px;margin:0 auto;background:var(--paper2);border-left:var(--thin);border-right:var(--thin);padding:22px 26px 34px;position:relative;
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/22px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/22px 100%}
+.receipt h4{text-align:center;font-weight:900;font-stretch:125%;font-size:26px;border-bottom:2px dashed var(--blue);padding-bottom:10px}
+.receipt pre{font-family:var(--mono);font-size:12.5px;line-height:1.75;overflow-x:auto;padding-top:10px}
+.receipt .r{color:var(--red)}
+.receipt .tot{border-top:2px dashed var(--blue);margin-top:8px;padding-top:10px;display:flex;justify-content:space-between;font-weight:900;font-stretch:118%;font-size:22px}
+
+footer{margin-top:60px;border-top:6px solid var(--blue);padding:16px 0 40px;font-size:14px;font-weight:600}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer b{font-weight:900;color:var(--red)}
+
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr}.hero .lead{border-right:0;padding-right:0}.hero .side{padding-left:0}
+  .lane{grid-template-columns:repeat(2,1fr)}.node{border-bottom:var(--thin)}
+  .script,.qa,.cost{grid-template-columns:1fr}.hooks,.qa>div:first-child,.cost>div:first-child{border-right:0;border-bottom:var(--thin)}
+  .form{grid-template-columns:1fr 1fr}.form .wide{grid-column:span 2}
+  .top nav{display:none}.figs{grid-template-columns:repeat(2,1fr)}.sh{grid-template-columns:1fr}.sh p{justify-self:start;text-align:left}
+  .rulers{grid-template-columns:1fr}
+}
+@media (max-width:520px){.wrap{padding:0 16px}.form{grid-template-columns:1fr}.form .wide{grid-column:auto}.lane{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span>K J Somaiya School of Engineering · LY Agentic AI Laboratory · Group 04</span>
+    <nav><a href="#brief">Brief</a><a href="#agents">Agents</a><a href="#facts">Facts</a><a href="#script">Script</a><a href="#board">Storyboard</a><a href="#qa">QA</a><a href="#cost">Cost</a><a href="#log">Log</a></nav></div>
+  <header class="mast"><h1 data-t="AGENTREEL"><span>AGENTREEL</span></h1>
+    <div class="issue"><span>Issue <b id="i-brief">C05</b></span><span>Run <b id="i-run">—</b></span><span id="i-date"></span><span id="i-prov"></span><span class="stamp" id="stamp">QA</span></div>
+  </header>
+
+  <div class="hero">
+    <div class="lead">
+      <h2>An AI film crew, <mark>built in the lab.</mark></h2>
+      <p class="lede">Seven agents read a sealed brief, pull facts from the official handout, write, cut, caption and check a 9:16 reel. Every call is logged and priced.</p>
+      <div class="cmd">python run.py --brief <b id="cmdbrief">briefs/C05.yaml</b> --seed <b>42</b></div>
+      <div class="figs" id="kpis"></div>
+    </div>
+    <div class="side">
+      <div class="frame"><video id="vid" controls playsinline preload="metadata" poster="../outputs/frames/S01.jpg"></video></div>
+      <p class="figcap" id="vidcap">final.mp4</p>
+    </div>
+  </div>
+
+  <section id="brief">
+    <div class="sh"><h3>The brief</h3><p>Category C needs one human review before export. It is logged, and it does not count as an intervention.</p></div>
+    <div class="form" id="briefgrid"></div>
+  </section>
+
+  <section id="agents">
+    <div class="sh"><h3>Seven agents, one loop</h3><p>Calls, seconds and rupees per agent, read from logs/run_log.jsonl for this run.</p></div>
+    <div class="lane" id="lane"></div>
+    <div class="loop" id="loop"></div>
+    <img class="graphimg" src="../docs/agent_graph.png" alt="Agent graph" onerror="this.remove()">
+  </section>
+
+  <section id="facts">
+    <div class="sh"><h3>Grounded, not guessed</h3><p>Retrieved from the handout PDF with ChromaDB + MiniLM. Each script line cites one of these ids.</p></div>
+    <div class="facts" id="factgrid"></div>
+  </section>
+
+  <section id="script">
+    <div class="sh"><h3>The script</h3><p>Three hooks scored for the three-second rule; body lines are bound to fact ids and trimmed by the Critic.</p></div>
+    <div class="script"><div class="hooks" id="hooks"><div class="lbl">Hook ballot</div></div><div class="lines" id="lines"><div class="lbl" style="margin-top:12px">As voiced</div></div></div>
+  </section>
+
+  <section id="board">
+    <div class="sh"><h3>Shot by shot</h3><p>One frame per shot, straight from the Editor's render.</p></div>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <section id="qa">
+    <div class="sh"><h3>Checked, twice</h3><p>The script is checked before any asset exists; the real MP4 is probed after the edit. A fail goes back to the agent that caused it.</p></div>
+    <div class="rulers" id="rulers"></div>
+    <div class="qa"><div id="chk1"></div><div id="chk2"></div></div>
+  </section>
+
+  <section id="cost">
+    <div class="sh"><h3>What it cost</h3><p>From logs/cost_report.csv. Local and offline models cost ₹0 and are still logged.</p></div>
+    <div class="cost"><div><table id="costtbl"></table></div><div class="budget" id="budget"></div></div>
+  </section>
+
+  <section id="log">
+    <div class="sh"><h3>The receipt</h3><p>One line per model or tool call, with a hash of every output so hand edits show up.</p></div>
+    <div class="receipt"><h4>RUN LOG</h4><pre id="logpre"></pre><div class="tot"><span>TOTAL</span><span id="logtot"></span></div></div>
+  </section>
+</div>
+<footer><div class="wrap"><span>AgentReel · Group 04 · K J Somaiya School of Engineering</span><b>Created with AI agents — LY Agentic AI Lab</b></div></footer>
+
+<script src="data.js"></script>
+<script>
+const D = window.AGENTREEL || {};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (n, d=2) => Number(n||0).toFixed(d);
+
+if (!D.run_id) {
+  document.querySelector('.hero').insertAdjacentHTML('afterend',
+    '<p style="padding:20px 0;font-weight:600">No run yet. Run <span class="mono">python run.py --brief briefs/C05.yaml --seed 42</span> to write frontend/data.js.</p>');
+} else render();
+
+function render(){
+  const b = D.brief, qa = D.qa || {}, ed = D.edit || {}, logs = D.logs || [];
+  const spent = logs.reduce((a,r)=>a+r.cost_inr,0);
+  $('#i-brief').textContent = b.id;
+  $('#i-run').textContent = D.run_id;
+  $('#i-date').textContent = new Date(D.generated).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+  $('#i-prov').textContent = 'LLM: ' + (qa.llm_provider||'—') + ' · seed ' + (qa.seed ?? '—');
+  const st = $('#stamp'); st.textContent = qa.status === 'pass' ? 'QA passed' : 'QA ' + (qa.status||'pending');
+  if (qa.status !== 'pass') st.classList.add('fail');
+  $('#cmdbrief').textContent = `briefs/${b.id}.yaml`;
+  $('#vid').src = '../' + ed.final;
+  $('#vidcap').textContent = `Fig. 1 — ${(ed.final||'').split('/').pop()}, ${fmt(qa.duration_s,1)} s, 1080×1920, voiced and captioned.`;
+  const kp = [[fmt(qa.duration_s,1)+'s','long'],[(D.storyboard||[]).length-1,'shots'],[(D.facts||[]).length,'facts, all sourced'],['₹'+fmt(spent,2),'spent of ₹500']];
+  $('#kpis').innerHTML = kp.map(([v,l])=>`<div><div class="v">${v}</div><div class="l">${l}</div></div>`).join('');
+
+  // brief form
+  const tick = (x, c) => `<span class="tick ${c}">${esc(x)}</span>`;
+  const bf = [['ID',esc(b.id)],['Category',esc(b.category)],['Format',esc(b.format.replace('video_','').replace('x',':'))+' · '+b.duration_s+' s'],['Language',esc(b.language)],
+    ['Topic',esc(b.topic),'wide'],['Audience',esc(b.audience)],['Tone',esc(b.tone)],
+    ['Must include',b.must_include.map(x=>tick(x,'yes')).join(''),'wide'],['Must avoid',b.must_avoid.map(x=>tick(x,'no')).join(''),'wide'],
+    ['Call to action',`<span class="cta">${esc(b.cta)}</span>`,'wide'],['Autonomy','L3, checkpointed'],['Interventions', countInterventions()+' of 5']];
+  $('#briefgrid').innerHTML = bf.map(([k,v,w])=>`<div class="${w||''}"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+
+  // agents
+  const order = [['planner','Planner','plan.json'],['researcher','Researcher','facts.json'],['scriptwriter','Scriptwriter','script.md'],['storyboarder','Storyboarder','storyboard.json'],['asset_generator','Asset Gen','manifest.csv'],['editor','Editor','final.mp4'],['critic','Critic','qa_report.json']];
+  const agg = {}; logs.forEach(r=>{const a=agg[r.agent]||(agg[r.agent]={n:0,t:0,c:0,tok:0}); a.n++; a.t+=r.latency_s; a.c+=r.cost_inr; a.tok+=r.input_tokens+r.output_tokens;});
+  const maxT = Math.max(...order.map(o=>(agg[o[0]]||{}).t||0), 1);
+  $('#lane').innerHTML = order.map(([k,n,o],i)=>{const a=agg[k]||{n:0,t:0,c:0,tok:0};
+    return `<div class="node ${k==='critic'?'critic':''}"><div class="i">${i+1}</div><div class="t">${n}</div>
+      <div class="m">${a.n} calls<br>${fmt(a.t,1)} s · ₹${fmt(a.c,2)}<br>${a.tok} tokens</div>
+      <div class="bar"><span style="width:${Math.max(3,a.t/maxT*100)}%"></span></div><div class="o">${o}</div></div>`}).join('');
+  const hist = (qa.history||[]);
+  $('#loop').innerHTML = '<span>Critic loop:</span>' + hist.map(h=>`<span class="it ${h.status==='pass'?'p':'f'}">${h.gate} gate, try ${h.loop}: ${h.status==='pass'?'passed':'failed, back to '+h.route_to.join(', ')}</span>`).join('');
+
+  // facts
+  $('#factgrid').innerHTML = (D.facts||[]).map(f=>`<div class="fact"><q>${esc(f.claim)}</q>
+    <div class="score dots" style="width:${Math.min(100,f.score*100)}%"></div>
+    <div class="src"><span class="id">${f.id}</span>${esc(f.source)}, p.${f.page} · ${esc(f.tags.join(', '))}${f.verified?'':' · <b class="red">unverified</b>'}</div></div>`).join('');
+
+  // script
+  const sc = D.script||{lines:[],hooks:[]};
+  $('#hooks').insertAdjacentHTML('beforeend', sc.hooks.map(h=>`<div class="hook ${h.text===sc.lines[0].text?'win':''}"><span class="box"></span><div>
+    <div class="tx">${esc(h.text)}</div><div class="meta">score ${h.score} · ${h.words} words · ~${h.est_s}s ${h.fits_3s?'fits 3 s':'over 3 s'}</div></div></div>`).join('')
+    + `<p class="mono" style="font-size:12px;margin-top:12px">script v${sc.version} · ${sc.lines.reduce((a,l)=>a+l.text.split(' ').length,0)} words</p>`);
+  const tl = {}; (ed.timeline||[]).forEach(t=>tl[t.shot]=t);
+  $('#lines').insertAdjacentHTML('beforeend', sc.lines.map((l,i)=>{const t=tl['S'+String(i+1).padStart(2,'0')]||{};
+    return `<div class="ln ${l.role==='hook'?'hook-l':l.role}"><span class="ts">${fmt(t.start,1)}–${fmt(t.end,1)} s</span><span class="tx">${esc(l.text)}</span><span class="fx">${l.fact_ids.map(f=>`<span>${f.replace('SELF:run_log','log')}</span>`).join('')}</span></div>`}).join(''));
+
+  // storyboard
+  $('#strip').innerHTML = (D.storyboard||[]).map(s=>{const t=tl[s.shot_id]||{}; const fr=(ed.frames||{})[s.shot_id];
+    return `<div class="shot"><div class="fr">${fr?`<img loading="lazy" src="../${fr}" alt="${s.shot_id}">`:''}</div>
+      <div class="cap"><span>${s.shot_id}</span><span>${fmt((t.end||0)-(t.start||0),1)} s</span></div>
+      <div class="vo">${esc(s.vo||s.on_screen_text)}</div></div>`}).join('');
+
+  // qa
+  const last = g => [...hist].reverse().find(h=>h.gate===g) || {checks:[]};
+  const chk = (h,title) => `<div class="lbl">${title}</div>` + h.checks.map(c=>`<div class="chk"><span class="s ${c.passed?'y':'n'}"></span><span class="c">${c.id}</span><span>${esc(c.name)}<span class="d">${esc(c.detail)}</span></span></div>`).join('');
+  $('#chk1').innerHTML = chk(last('script'),'Script gate, last try');
+  $('#chk2').innerHTML = chk(last('video'),'Video gate, ffmpeg probe');
+  const pct = (v,a,b)=>Math.max(0,Math.min(100,(v-a)/(b-a)*100));
+  $('#rulers').innerHTML = `<div class="ruler"><div class="l">Duration</div><div class="v">${fmt(qa.duration_s,1)}<small> s</small></div>
+    <div class="scale"><div class="ok dots" style="left:${pct(30,20,70)}%;width:${pct(60,20,70)-pct(30,20,70)}%"></div><div class="pin" style="left:${pct(qa.duration_s,20,70)}%"></div></div><div class="scale-l"><span>20</span><span>allowed 30–60</span><span>70</span></div></div>
+    <div class="ruler"><div class="l">Loudness</div><div class="v">${fmt(qa.lufs,1)}<small> LUFS</small></div>
+    <div class="scale"><div class="ok dots" style="left:${pct(-15.5,-24,-8)}%;width:${pct(-12.5,-24,-8)-pct(-15.5,-24,-8)}%"></div><div class="pin" style="left:${pct(qa.lufs,-24,-8)}%"></div></div><div class="scale-l"><span>-24</span><span>target -14</span><span>-8</span></div></div>`;
+
+  // cost
+  const stg = {}; logs.forEach(r=>{const a=stg[r.agent]||(stg[r.agent]={n:0,t:0,c:0,ti:0,to:0}); a.n++; if(r.agent!=='orchestrator') a.t+=r.latency_s; a.c+=r.cost_inr; a.ti+=r.input_tokens; a.to+=r.output_tokens;});
+  const tmax = Math.max(...Object.values(stg).map(a=>a.t),1);
+  $('#costtbl').innerHTML = `<tr><th>Stage</th><th class="r">Calls</th><th class="r">Tokens in / out</th><th class="r">Time</th><th style="width:22%"></th><th class="r">₹</th></tr>` +
+    Object.entries(stg).map(([k,a])=>`<tr><td>${k.replace('_',' ')}</td><td class="r">${a.n}</td><td class="r">${a.ti} / ${a.to}</td><td class="r">${k==='orchestrator'?'wall':fmt(a.t,1)+' s'}</td><td><div class="hbar" style="width:${k==='orchestrator'?0:Math.max(2,a.t/tmax*100)}%"></div></td><td class="r">${fmt(a.c,2)}</td></tr>`).join('');
+  const wall = qa.elapsed_s||0;
+  $('#budget').innerHTML = `<div class="lbl" style="margin-top:12px">Spent against the ₹500 cap</div>
+    <div class="big">₹${fmt(spent,2)}<small> / 500</small></div><div class="meter"><span style="width:${spent/500*100}%"></span></div>
+    <div class="lbl">Time against the 3-hour slot</div>
+    <div class="big" style="font-size:52px">${Math.floor(wall/60)}m ${Math.round(wall%60)}s</div><div class="meter"><span style="width:${wall/10800*100}%;background:var(--blue)"></span></div>
+    <p style="font-size:13.5px;font-weight:500">${logs.length} logged calls · provider ${esc(qa.llm_provider)} · seed ${qa.seed}</p>`;
+
+  // receipt
+  $('#logpre').innerHTML = logs.map(r=>`${r.ts.slice(11)}  ${esc(r.agent).padEnd(15)} ${esc(r.tool).padEnd(18)} ${fmt(r.latency_s,2).padStart(7)}s  <span class="${r.status==='ok'||r.status==='pass'||r.status==='approved'?'':'r'}">${esc(r.status).padEnd(8)}</span> ₹${fmt(r.cost_inr,2)}`).join('\n');
+  $('#logtot').textContent = '₹' + fmt(spent,2);
+}
+function countInterventions(){
+  const t = D.interventions||''; return t.split('\n').filter(l=>l.startsWith('| ') && !l.startsWith('| Time') && l.includes(D.run_id) && !/not counted/.test(l)).length;
+}
+</script>
+</body>
+</html>

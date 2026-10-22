@@ -1,0 +1,127 @@
+[
+  {
+    "shot_id": "S01",
+    "role": "hook",
+    "vo": "What does an AI-ready graduate build?",
+    "on_screen_text": "The AI-ready graduate",
+    "visual": "Dark field, glowing neural lattice resolving into a graduation-cap glyph; title slams in.",
+    "style": "hook",
+    "duration_est": 2.86,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": []
+  },
+  {
+    "shot_id": "S02",
+    "role": "body",
+    "vo": "In the final-year Agentic AI Lab at K J Somaiya, students don't just study AI. They ship it.",
+    "on_screen_text": "The Agentic AI Lab",
+    "visual": "Isometric lab bench of workstations rendered as light blocks; screens pulse with agent traffic.",
+    "style": "lab",
+    "duration_est": 8.08,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F01"
+    ]
+  },
+  {
+    "shot_id": "S03",
+    "role": "body",
+    "vo": "Multi-agent pipelines, with clear roles, hand-offs and a critic loop.",
+    "on_screen_text": "Multi-agent pipelines",
+    "visual": "Seven agent nodes light up in sequence; a critic arc loops back from the last node.",
+    "style": "graph",
+    "duration_est": 4.6,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F02"
+    ]
+  },
+  {
+    "shot_id": "S04",
+    "role": "body",
+    "vo": "A sealed brief. A three-hour hard stop. A five-hundred-rupee API budget.",
+    "on_screen_text": "3 hours. ₹500.",
+    "visual": "Countdown ring and budget meter; a sealed brief card flips open.",
+    "style": "clock",
+    "duration_est": 5.03,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F08",
+      "F07"
+    ]
+  },
+  {
+    "shot_id": "S05",
+    "role": "body",
+    "vo": "Every call logged, every rupee tracked, one command to reproduce the run.",
+    "on_screen_text": "Logged. Costed. Reproducible.",
+    "visual": "Terminal window streaming JSONL log records with cost column ticking.",
+    "style": "terminal",
+    "duration_est": 5.47,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F05"
+    ]
+  },
+  {
+    "shot_id": "S06",
+    "role": "body",
+    "vo": "Then they deploy, live on GitHub Pages, Hugging Face Spaces or Streamlit Cloud.",
+    "on_screen_text": "Shipped to the web",
+    "visual": "Browser windows fan out from a deploy button onto a global grid.",
+    "style": "deploy",
+    "duration_est": 5.9,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F09"
+    ]
+  },
+  {
+    "shot_id": "S07",
+    "role": "body",
+    "vo": "Responsible AI built in: grounding, consent, disclosure, licensing.",
+    "on_screen_text": "Responsible by design",
+    "visual": "Shield made of four checkmarks: grounding, consent, disclosure, licensing.",
+    "style": "shield",
+    "duration_est": 3.73,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "F06"
+    ]
+  },
+  {
+    "shot_id": "S08",
+    "role": "body",
+    "vo": "The proof? This reel was planned, scripted and edited by agents built in that lab.",
+    "on_screen_text": "Student-built agents made this",
+    "visual": "This very reel shown as a filmstrip inside a 9:16 frame, agent badges on each frame.",
+    "style": "reel",
+    "duration_est": 6.77,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": [
+      "SELF:run_log"
+    ]
+  },
+  {
+    "shot_id": "S09",
+    "role": "cta",
+    "vo": "Hire our AI-ready graduates today.",
+    "on_screen_text": "Hire AI-ready graduates",
+    "visual": "Spotlight sweep; CTA type locks centre-frame.",
+    "style": "cta",
+    "duration_est": 2.42,
+    "asset_source": "generated (procedural; placeholder for official media kit)",
+    "fact_ids": []
+  },
+  {
+    "shot_id": "S10",
+    "role": "endcard",
+    "vo": "",
+    "on_screen_text": "Hire our AI-ready graduates today.",
+    "visual": "End card: institute wordmark, CTA, AI-disclosure line.",
+    "style": "endcard",
+    "duration_est": 4.0,
+    "asset_source": "generated (typographic end card)",
+    "fact_ids": []
+  }
+]

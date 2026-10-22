@@ -1,0 +1,29 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+</style>
+  <div id="root" data-composition-id="s09" data-width="1080" data-height="1920">
+
+    <div id="s09-k" class="kick" style="position:absolute;top:330px;left:96px;">FOR RECRUITERS</div>
+    <div class="serif plate" style="position:absolute;left:80px;right:60px;top:400px;font-size:150px;line-height:.92;"><span id="s09-w0" class="" style="display:inline-block;margin-right:28px;">Hire</span><span id="s09-w1" class="" style="display:inline-block;margin-right:28px;">our</span><span id="s09-w2" class="" style="display:inline-block;margin-right:28px;">AI&#8209;ready</span><span id="s09-w3" class="" style="display:inline-block;margin-right:28px;">graduates</span><span id="s09-w4" class="red" style="display:inline-block;margin-right:28px;">today.</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s09-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+    tl.fromTo("#s09-w0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.17);
+    tl.fromTo("#s09-w1", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.44);
+    tl.fromTo("#s09-w2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 0.79);
+    tl.fromTo("#s09-w3", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.35);
+    tl.fromTo("#s09-w4", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, 1.94);
+    window.__timelines["s09"] = tl;
+  </script>
+</template>

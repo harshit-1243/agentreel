@@ -1,0 +1,272 @@
+{
+  "run_id": "G04-C05-03",
+  "brief": "C05",
+  "status": "pass",
+  "final": "outputs/G04_C05_final.mp4",
+  "srt": "outputs/G04_C05_final.srt",
+  "duration_s": 51.1,
+  "lufs": -14.26,
+  "probe": {
+    "duration": 51.1,
+    "vcodec": "h264",
+    "profile": "High",
+    "pix_fmt": "yuv420p",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30.0,
+    "acodec": "aac",
+    "sr": 48000,
+    "channels": "stereo",
+    "abitrate": 164,
+    "size_mb": 31.86
+  },
+  "loops": {
+    "script": 2,
+    "video": 1
+  },
+  "history": [
+    {
+      "loop": 1,
+      "gate": "script",
+      "status": "fail",
+      "checks": [
+        {
+          "id": "S1",
+          "name": "word budget",
+          "passed": false,
+          "detail": "127 words vs max 98 (over by 29)",
+          "route_to": "scriptwriter"
+        },
+        {
+          "id": "S2",
+          "name": "hook <= 3 s",
+          "passed": true,
+          "detail": "\"What does an AI-ready graduate build?\" ~2.00s",
+          "route_to": null
+        },
+        {
+          "id": "S3",
+          "name": "every body line cites a verified fact",
+          "passed": true,
+          "detail": "all grounded",
+          "route_to": null
+        },
+        {
+          "id": "S4",
+          "name": "no numbers absent from facts.json",
+          "passed": true,
+          "detail": "numbers ok",
+          "route_to": null
+        },
+        {
+          "id": "S5",
+          "name": "must avoid: exaggerated placement figures / stats",
+          "passed": true,
+          "detail": "clean",
+          "route_to": null
+        },
+        {
+          "id": "S6",
+          "name": "must include: real lab infrastructure",
+          "passed": true,
+          "detail": "mentions the Agentic AI Lab",
+          "route_to": null
+        },
+        {
+          "id": "S7",
+          "name": "must include: real-world deployment skills",
+          "passed": true,
+          "detail": "mentions deployment targets",
+          "route_to": null
+        },
+        {
+          "id": "S8",
+          "name": "CTA present",
+          "passed": true,
+          "detail": "\"Hire our AI-ready graduates today.\"",
+          "route_to": null
+        }
+      ],
+      "route_to": [
+        "scriptwriter"
+      ],
+      "over_words": 29
+    },
+    {
+      "loop": 2,
+      "gate": "script",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "S1",
+          "name": "word budget",
+          "passed": true,
+          "detail": "98 words vs max 98",
+          "route_to": null
+        },
+        {
+          "id": "S2",
+          "name": "hook <= 3 s",
+          "passed": true,
+          "detail": "\"What does an AI-ready graduate build?\" ~2.00s",
+          "route_to": null
+        },
+        {
+          "id": "S3",
+          "name": "every body line cites a verified fact",
+          "passed": true,
+          "detail": "all grounded",
+          "route_to": null
+        },
+        {
+          "id": "S4",
+          "name": "no numbers absent from facts.json",
+          "passed": true,
+          "detail": "numbers ok",
+          "route_to": null
+        },
+        {
+          "id": "S5",
+          "name": "must avoid: exaggerated placement figures / stats",
+          "passed": true,
+          "detail": "clean",
+          "route_to": null
+        },
+        {
+          "id": "S6",
+          "name": "must include: real lab infrastructure",
+          "passed": true,
+          "detail": "mentions the Agentic AI Lab",
+          "route_to": null
+        },
+        {
+          "id": "S7",
+          "name": "must include: real-world deployment skills",
+          "passed": true,
+          "detail": "mentions deployment targets",
+          "route_to": null
+        },
+        {
+          "id": "S8",
+          "name": "CTA present",
+          "passed": true,
+          "detail": "\"Hire our AI-ready graduates today.\"",
+          "route_to": null
+        }
+      ],
+      "route_to": [],
+      "over_words": 0
+    },
+    {
+      "loop": 1,
+      "gate": "video",
+      "status": "pass",
+      "checks": [
+        {
+          "id": "V1",
+          "name": "duration 30-60 s",
+          "passed": true,
+          "detail": "51.10s",
+          "route_to": null
+        },
+        {
+          "id": "V2",
+          "name": "duration near brief (45s ±20%)",
+          "passed": true,
+          "detail": "51.10s vs 45s",
+          "route_to": null
+        },
+        {
+          "id": "V3",
+          "name": "1080x1920 (9:16)",
+          "passed": true,
+          "detail": "1080x1920",
+          "route_to": null
+        },
+        {
+          "id": "V4",
+          "name": "constant 30 fps",
+          "passed": true,
+          "detail": "30.0 fps",
+          "route_to": null
+        },
+        {
+          "id": "V5",
+          "name": "H.264 High, yuv420p",
+          "passed": true,
+          "detail": "h264 High yuv420p",
+          "route_to": null
+        },
+        {
+          "id": "V6",
+          "name": "AAC 48 kHz stereo 128-192 kbps",
+          "passed": true,
+          "detail": "aac 48000 Hz stereo 164 kb/s",
+          "route_to": null
+        },
+        {
+          "id": "V7",
+          "name": "file size <= 100 MB",
+          "passed": true,
+          "detail": "31.86 MB",
+          "route_to": null
+        },
+        {
+          "id": "V8",
+          "name": "loudness ≈ -14 LUFS (±1.5)",
+          "passed": true,
+          "detail": "-14.3 LUFS",
+          "route_to": null
+        },
+        {
+          "id": "V9",
+          "name": "burned captions + .srt",
+          "passed": true,
+          "detail": "36 cues, outputs/G04_C05_final.srt",
+          "route_to": null
+        },
+        {
+          "id": "V10",
+          "name": "text inside safe zones (top 250 / bottom 350 px)",
+          "passed": true,
+          "detail": "topbar [262, 322], headline [1050, 1390], captions [1436, 1532]",
+          "route_to": null
+        },
+        {
+          "id": "V11",
+          "name": "hook spoken inside first 3 s",
+          "passed": true,
+          "detail": "first cue at 0.195s, hook shot ends 2.46s",
+          "route_to": null
+        },
+        {
+          "id": "V12",
+          "name": "end card 3-5 s with CTA + AI disclosure",
+          "passed": true,
+          "detail": "\"Created with AI agents — LY Agentic AI Lab\"",
+          "route_to": null
+        }
+      ],
+      "route_to": [],
+      "probe": {
+        "duration": 51.1,
+        "vcodec": "h264",
+        "profile": "High",
+        "pix_fmt": "yuv420p",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30.0,
+        "acodec": "aac",
+        "sr": 48000,
+        "channels": "stereo",
+        "abitrate": 164,
+        "size_mb": 31.86
+      },
+      "lufs": -14.26
+    }
+  ],
+  "elapsed_s": 204.7,
+  "spent_inr": 0.0,
+  "llm_provider": "offline",
+  "seed": 42
+}

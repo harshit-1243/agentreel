@@ -1,0 +1,47 @@
+<template>
+  <style>
+@font-face { font-family: 'Archivo'; src: url('assets/fonts/Archivo.ttf'); font-weight: 100 900; font-stretch: 62% 125%; }
+#root { position: absolute; inset: 0; color: #263a8c; font-family: 'Archivo', sans-serif; font-weight: 500; }
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 112%; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.red { color: #e8412c; } .amber { color: #263a8c; } .mute { color: #263a8c; }
+.card { position: absolute; background: #ede9e0; border: 5px solid #263a8c; }
+.kick { font-family: 'Archivo', sans-serif; font-size: 32px; font-weight: 800; font-stretch: 100%; color: #263a8c;
+        border-bottom: 3px solid #263a8c; padding-bottom: 6px; }
+.plate { text-shadow: 6px 4px 0 rgba(232,65,44,.92); }
+</style>
+  <div id="root" data-composition-id="s04" data-width="1080" data-height="1920">
+
+    <div id="s04-k" class="kick" style="position:absolute;top:220px;left:96px;">THE LIVE-RUN RULES</div>
+    <div id="s04-b1" class="card" style="left:90px;top:300px;width:900px;height:200px;padding:0 54px;display:flex;align-items:center;justify-content:space-between;">
+      <span class="serif" style="font-size:84px;">A sealed brief</span>
+      <span id="s04-seal" class="mono" style="font-size:30px;letter-spacing:.2em;color:#220f18;background:#e8412c;padding:14px 22px;transform:rotate(-6deg);">SEALED</span></div>
+    <div id="s04-b2" class="card" style="left:90px;top:530px;width:900px;height:250px;padding:0 54px;display:flex;align-items:center;justify-content:space-between;">
+      <span class="serif" style="font-size:84px;line-height:.95;">Hard<br>stop</span>
+      <span id="s04-clock" class="mono amber" style="font-size:118px;font-weight:700;">3:00:00</span></div>
+    <div id="s04-b3" class="card" style="left:90px;top:810px;width:900px;height:260px;padding:44px 54px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span class="serif" style="font-size:72px;">Budget</span>
+        <span style="font-size:40px;font-weight:800;white-space:nowrap;"><span style="color:#263a8c;">₹0.00</span><span class="mute"> / ₹500</span></span></div>
+      <div style="margin-top:36px;height:22px;background:#263a8c;overflow:hidden;">
+        <div id="s04-bar" style="height:100%;width:100%;background:linear-gradient(90deg,#e8412c,#263a8c);transform-origin:0 50%;"></div></div>
+      <div class="mono mute" style="font-size:28px;margin-top:14px;">every call costed in cost_report.csv</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo("#s04-k", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0);
+    tl.fromTo("#s04-b1", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.00);
+    tl.fromTo("#s04-seal", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.out" }, 0.24);
+    tl.fromTo("#s04-b2", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 1.23);
+    tl.fromTo("#s04-b3", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 2.68);
+    tl.fromTo("#s04-bar", { scaleX: 0 }, { scaleX: 0.0040, duration: 0.8, ease: "power2.out" }, 3.13);
+    tl.to(["#s04-b1", "#s04-b2", "#s04-k"], { opacity: 0, y: -60, duration: 0.25, ease: "power3.in" }, 5.26);
+    tl.to("#s04-b3", { scale: 1.25, opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power3.in" }, 5.26);
+    const s04Clock = { s: 10800 };
+    tl.to(s04Clock, { s: 10800 - 4.08 * 37, duration: 3.78, ease: "none",
+      onUpdate: () => { const s = Math.round(s04Clock.s); const el = document.querySelector("#s04-clock");
+        if (el) el.textContent = Math.floor(s / 3600) + ":" + String(Math.floor(s / 60) % 60).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); } }, 1.48);
+    window.__timelines["s04"] = tl;
+  </script>
+</template>
