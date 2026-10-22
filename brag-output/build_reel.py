@@ -7,7 +7,7 @@ screen comes from the run's own artefacts.
     npx hyperframes render brag-output/composition -o brag-output/brag.mp4
 
 Inputs: outputs/{edit_meta,script,storyboard,facts,qa_report}.json, logs/run_log.jsonl,
-outputs/G04_C05_final.mp4 (audio mix), outputs/frames/*.jpg, docs/screenshots/frontend_hero.png
+outputs/G19_C05_final.mp4 (audio mix), outputs/frames/*.jpg, docs/screenshots/frontend_hero.png
 """
 from __future__ import annotations
 
@@ -376,7 +376,7 @@ def sc_endcard(sid, seg, ctx):
     <div id="{sid}-mark" class="serif" style="position:absolute;left:80px;top:1090px;font-size:56px;">AI-ready. Industry-ready.</div>
     <div id="{sid}-rule" style="position:absolute;left:80px;right:80px;top:1196px;height:4px;background:#263a8c;"></div>
     <div id="{sid}-disc" style="position:absolute;left:80px;top:1220px;font-size:34px;font-weight:800;">Created with AI agents — LY Agentic AI Lab</div>
-    <div id="{sid}-src" style="position:absolute;left:80px;top:1272px;font-size:28px;">Facts: LY Agentic AI Lab handout · Brief {E(b['id'])} · Team G04</div>"""
+    <div id="{sid}-src" style="position:absolute;left:80px;top:1272px;font-size:28px;">Facts: LY Agentic AI Lab handout · Brief {E(b['id'])} · Team G19</div>"""
     js = f"""
     tl.fromTo("#{sid}-flood", {{ scaleY: 0, transformOrigin: "50% 0%" }}, {{ scaleY: 1, duration: 0.45, ease: "expo.out" }}, 0);
     tl.fromTo(["#{sid}-name", "#{sid}-uni"], {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 0.05);

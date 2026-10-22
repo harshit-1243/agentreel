@@ -1,4 +1,4 @@
-# Brag Plan: AgentReel (G04) — brief C05 reel
+# Brag Plan: AgentReel (G19) — brief C05 reel
 
 ## What is this app?
 A one-command, seven-agent pipeline built in the LY Agentic AI Lab that turns a sealed brief into a grounded,

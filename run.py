@@ -1,4 +1,4 @@
-"""AgentReel G04 - one-command multi-agent reel pipeline.
+"""AgentReel G19 - one-command multi-agent reel pipeline.
 
     python run.py --brief briefs/C05.yaml --seed 42
 
@@ -65,7 +65,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="AgentReel multi-agent video pipeline")
     ap.add_argument("--brief", required=True, help="path to briefs/<id>.yaml")
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--team", default=None, help="team id (default from .env TEAM_ID or G04)")
+    ap.add_argument("--team", default=None, help="team id (default from .env TEAM_ID or G19)")
     ap.add_argument("--auto-approve", action="store_true", help="skip the interactive export checkpoint")
     ap.add_argument("--no-report", action="store_true", help="skip generate_report.py")
     args = ap.parse_args(argv)
@@ -75,7 +75,7 @@ def main(argv=None):
     random.seed(args.seed)
     np.random.seed(args.seed)
     brief = load_brief(args.brief)
-    team = args.team or os.getenv("TEAM_ID", "G04")
+    team = args.team or os.getenv("TEAM_ID", "G19")
     ctx = RunContext(brief=brief, seed=args.seed, team_id=team, run_id=next_run_id(team, brief.id),
                      work=DIRS["outputs"])
     for d in DIRS.values():

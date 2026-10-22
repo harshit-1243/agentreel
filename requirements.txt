@@ -1,4 +1,4 @@
-# AgentReel G04 - pinned (Python 3.12, Windows 11 / works on Linux & macOS)
+# AgentReel G19 - pinned (Python 3.12, Windows 11 / works on Linux & macOS)
 # Orchestration, schemas, config
 langchain-core==1.6.13
 langchain-text-splitters==1.1.3

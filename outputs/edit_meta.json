@@ -1,6 +1,6 @@
 {
-  "final": "outputs/G04_C05_final.mp4",
-  "srt": "outputs/G04_C05_final.srt",
+  "final": "outputs/G19_C05_final.mp4",
+  "srt": "outputs/G19_C05_final.srt",
   "duration_s": 51.0,
   "fps": 30,
   "size": [
@@ -860,10 +860,10 @@
     ]
   },
   "loudnorm_pass1": {
-    "input_i": "-21.55",
-    "input_tp": "-6.53",
-    "input_lra": "4.60",
-    "input_thresh": "-32.38",
+    "input_i": "-21.54",
+    "input_tp": "-6.56",
+    "input_lra": "4.70",
+    "input_thresh": "-32.37",
     "output_i": "-14.69",
     "output_tp": "-1.50",
     "output_lra": "3.90",

@@ -5,3 +5,9 @@ checkpoints are recorded too but marked as not counted.
 
 | Time | Run | Stage / agent | What the human changed | Reason |
 |---|---|---|---|---|
+
+## Runs under the earlier placeholder team id G04 (build phase)
+|---|---|---|---|---|
+| 20:00 | G04-C05-01 | Critic -> export | Pre-export review checkpoint: approved | Mandatory Category C review (auto-approved (--auto-approve / non-interactive run)); not counted as an intervention |
+| 22:38 | G04-C05-02 | Critic -> export | Pre-export review checkpoint: approved | Mandatory Category C review (auto-approved (no interactive stdin)); not counted as an intervention |
+| 22:42 | G04-C05-03 | Critic -> export | Pre-export review checkpoint: approved | Mandatory Category C review (auto-approved (no interactive stdin)); not counted as an intervention |

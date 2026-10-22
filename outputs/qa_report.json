@@ -1,11 +1,11 @@
 {
-  "run_id": "G04-C05-03",
+  "run_id": "G19-C05-01",
   "brief": "C05",
   "status": "pass",
-  "final": "outputs/G04_C05_final.mp4",
-  "srt": "outputs/G04_C05_final.srt",
+  "final": "outputs/G19_C05_final.mp4",
+  "srt": "outputs/G19_C05_final.srt",
   "duration_s": 51.1,
-  "lufs": -14.26,
+  "lufs": -14.27,
   "probe": {
     "duration": 51.1,
     "vcodec": "h264",
@@ -222,7 +222,7 @@
           "id": "V9",
           "name": "burned captions + .srt",
           "passed": true,
-          "detail": "36 cues, outputs/G04_C05_final.srt",
+          "detail": "36 cues, outputs/G19_C05_final.srt",
           "route_to": null
         },
         {
@@ -262,10 +262,10 @@
         "abitrate": 164,
         "size_mb": 31.86
       },
-      "lufs": -14.26
+      "lufs": -14.27
     }
   ],
-  "elapsed_s": 204.7,
+  "elapsed_s": 193.0,
   "spent_inr": 0.0,
   "llm_provider": "offline",
   "seed": 42

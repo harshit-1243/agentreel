@@ -2,7 +2,7 @@
 logs/cost_report.csv, logs/interventions.md, outputs/*.json, docs/agent_graph.png,
 a storyboard contact sheet and a headless-browser screenshot of the frontend.
 
-    python generate_report.py [--run-id G04-C05-03]
+    python generate_report.py [--run-id G19-C05-01]
 """
 from __future__ import annotations
 
@@ -199,7 +199,7 @@ def build(run_id=None):
     pdf.cell(0, 5, f"Brief {brief_id}: {brief['topic']}")
     pdf.set_xy(14, 52.3)
     pdf.set_font("plexsb", "", 8)
-    pdf.cell(0, 4, f"Team {meta['team']} (Group 4): " + " · ".join(f"{n} ({r})" for n, r in TEAM))
+    pdf.cell(0, 4, f"Team {meta['team']} (Group 19): " + " · ".join(f"{n} ({r})" for n, r in TEAM))
     pdf.set_xy(14, 56.6)
     pdf.set_font("plex", "", 7.2)
     pdf.cell(0, 4, f"Run {run_id} · seed {qa['seed']} · LLM {qa['llm_provider']} · "

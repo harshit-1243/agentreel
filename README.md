@@ -1,8 +1,8 @@
-# AgentReel · Group 04 (G04)
+# AgentReel · Group 19 (G19)
 
 **SOMAIYA AGENTREEL CHALLENGE — LY Agentic AI Laboratory, K J Somaiya School of Engineering**
 
-| Team G04 (Group 4) | Roll number |
+| Team G19 (Group 19) | Roll number |
 |---|---|
 | Harshit Modi | 16014223039 |
 | Mohammed Zamee Sheikh | 16014223054 |
@@ -17,7 +17,7 @@ and tool call is logged, costed and hashed.
 | **Live-run brief** | **C05** · Responsible AI Usage · *AI-ready graduate: how the curriculum and labs build industry AI skills* |
 | **Autonomy level** | **L3 — Checkpointed autonomy.** One command runs end to end; the Critic self-repairs through two gates; a human reviews once before export (mandatory for Category A/C — logged, not counted). |
 | **Run command** | `python run.py --brief briefs/C05.yaml --seed 42` |
-| **Final output** | `outputs/G04_C05_final.mp4` + `outputs/G04_C05_final.srt` + `outputs/qa_report.json` |
+| **Final output** | `outputs/G19_C05_final.mp4` + `outputs/G19_C05_final.srt` + `outputs/qa_report.json` |
 | **Report** | `docs/process_report.pdf` (generated automatically at the end of every run) |
 | **Dashboard** | `frontend/index.html` (open in a browser after a run) |
 
@@ -45,7 +45,7 @@ Brief ─► Planner ─► Researcher (RAG) ─► Scriptwriter ◄─► Criti
 | 3 | Scriptwriter | `agents/scriptwriter.py` | A/B/C hook variants scored for the 3-second rule; body lines are bound to fact ids (a line is only written if its facts exist); drops lowest-priority lines on Critic feedback | `outputs/script.md`, `outputs/script.json` |
 | 4 | Storyboarder | `agents/storyboarder.py` | 6–12 face-free shots + 4 s end card: on-screen text, visual, style, duration, asset source | `outputs/storyboard.json` |
 | 5 | Asset Generator | `agents/asset_generator.py` | Edge-TTS VO **with word timings**, procedural visuals (official media kit used first if present), procedural music bed, licence manifest | `assets/generated/`, `assets/manifest.csv` |
-| 6 | Editor | `agents/editor.py` | MoviePy: Ken Burns, cross-dissolves, headline + **karaoke captions inside safe zones**, ducked music, end card with CTA + AI disclosure, **2-pass loudnorm to −14 LUFS** | `outputs/G04_C05_final.mp4/.srt`, `outputs/edit_meta.json`, `outputs/frames/` |
+| 6 | Editor | `agents/editor.py` | MoviePy: Ken Burns, cross-dissolves, headline + **karaoke captions inside safe zones**, ducked music, end card with CTA + AI disclosure, **2-pass loudnorm to −14 LUFS** | `outputs/G19_C05_final.mp4/.srt`, `outputs/edit_meta.json`, `outputs/frames/` |
 | 7 | Critic / QA | `agents/critic.py` | 20 deterministic rules in two gates (script gate before any asset is made; video gate on the real MP4 via ffmpeg probe). Each failure names the agent to route back to; max 3 loops | `outputs/qa_report.json` |
 
 ### Critic rules
@@ -62,7 +62,7 @@ duration, the orchestrator re-voices at a faster TTS rate instead of cutting gro
 ## 2. Repository layout
 
 ```
-agentreel-G04/
+agentreel-G19/
 ├── README.md              # this file
 ├── run.py                 # one-command entry point (orchestrator)
 ├── generate_report.py     # builds docs/process_report.pdf from logs + outputs
@@ -75,7 +75,7 @@ agentreel-G04/
 ├── data/                  # LY_AgenticAI_Lab_Handout.pdf - the official source document
 ├── assets/                # fonts (OFL), generated/ (VO, images, music), official/ (drop media kit here),
 │                          # manifest.csv (source + licence of every asset)
-├── outputs/               # G04_C05_final.mp4 / .srt / qa_report.json / plan / facts / script / storyboard / frames
+├── outputs/               # G19_C05_final.mp4 / .srt / qa_report.json / plan / facts / script / storyboard / frames
 ├── logs/                  # run_log.jsonl · cost_report.csv · interventions.md
 ├── docs/                  # agent_graph.png · process_report.pdf · screenshots/
 ├── frontend/              # index.html dashboard + data.js (written by run.py)
@@ -125,7 +125,7 @@ Any hosted failure falls back to the offline model and the fallback is written t
 Every call goes through `agents/common.log_call` → one line in `logs/run_log.jsonl`:
 
 ```json
-{"ts":"2026-10-22T20:01:13","run_id":"G04-C05-03","agent":"scriptwriter","tool":"llm","model":"offline-template",
+{"ts":"2026-10-22T20:01:13","run_id":"G19-C05-01","agent":"scriptwriter","tool":"llm","model":"offline-template",
  "prompt_id":"scriptwriter_v2","input_tokens":1270,"output_tokens":905,"cost_inr":0.0,"latency_s":0.002,
  "status":"ok","output_path":null,"output_sha256":null,"human_intervention":false}
 ```
@@ -134,7 +134,7 @@ and a roll-up row in `logs/cost_report.csv` (`stage, provider, model, tool, unit
 Output files are SHA-256 hashed so hand-edited artefacts are detectable. Human actions go to `logs/interventions.md`.
 Logs from build-phase dry runs are kept in `logs/build_phase/`.
 
-## 6. Results (run G04-C05-03, brief C05)
+## 6. Results (run G19-C05-01, brief C05)
 
 | Metric | Result | Rule |
 |---|---|---|
@@ -145,7 +145,7 @@ Logs from build-phase dry runs are kept in `logs/build_phase/`.
 | Grounding | 14 facts, all verified, every body line cites a fact id | no fabricated facts |
 | Critic loops | script gate 2 (127 → 98 words), video gate 1 | ≤ 3 |
 | QA | **20 / 20 rules pass** | — |
-| Spend / time | **₹0.00** of ₹500 · 3.4 min of 180 | budget + 3 h |
+| Spend / time | **₹0.00** of ₹500 · 3.2 min of 180 | budget + 3 h |
 | Human interventions | **0** (+1 mandatory pre-export checkpoint, not counted) | ≤ 5 |
 
 Full tables are in `docs/process_report.pdf`; every number above is regenerated per run in `outputs/qa_report.json`.
@@ -190,6 +190,6 @@ printed in one deliberate medium: a **two-ink risograph** on newsprint (`agents/
 
 Open-source libraries: MoviePy, imageio-ffmpeg/FFmpeg, edge-tts, ChromaDB, sentence-transformers
 (all-MiniLM-L6-v2), LangChain text splitters, PyMuPDF, pydantic, fpdf2, Pillow, NumPy, Matplotlib.
-Fonts from Google Fonts / IBM Plex (OFL). The companion promo reel in the submission (`G04_C05_final.mp4`) was
+Fonts from Google Fonts / IBM Plex (OFL). The companion promo reel in the submission (`G19_C05_final.mp4`) was
 composed with HyperFrames (HTML-to-video) from this pipeline's script, storyboard and voice-over.
 Built with help from Claude Code (AI coding assistant).
